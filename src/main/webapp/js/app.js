@@ -9,9 +9,9 @@ $(document).ready(function() {
 //* la funcion Auth() 
 function authUser() {
 
-  let userName = $("#user").val();
-  let passWord = $("#password").val();
-
+  let username = $("#user").val();
+  let password = $("#password").val();
+/*
   $.ajax({
     type: "POST",
     dataType: "html",
@@ -30,30 +30,29 @@ function authUser() {
       }
     }
   });
-  
-  // req por body
-  // $.ajax({
-  //   type: "POST",
-  //   contentType: "application/json",
-  //   url: "./ServletAuth",
-  //   data: JSON.stringify({
-  //     username: userName,
-  //     password: passWord
-  //   }),
-  //   success: function(result) {
-  //     let parsedResult = JSON.parse(result);
-  //     console.log(parsedResult)
-  //     //* retornar un false
-  //     if(parsedResult != false) {
-  //       let username = parsedResult['username'];
-  //       document.location.href = "home.jsp?username="+username;
-  //     }
-  //   }
-  // });
+}*/
+
+	//req por body
+	$.ajax({
+		type: "POST",
+		contentType: "application/json",
+		url: "./ServletAuth",
+		data: JSON.stringify({
+			username: username,
+			password: password
+		}),
+		success: function(result) {
+			let parsedResult = JSON.parse(result);
+			console.log(parsedResult)
+			//* retornar un false
+			if (parsedResult != false) {
+				let username = parsedResult['username'];
+				document.location.href = "home.jsp?username=" + username;
+			}
+   }
+ });
+ }
  
-
-}
-
 // promesas
 /*
 $.ajax({

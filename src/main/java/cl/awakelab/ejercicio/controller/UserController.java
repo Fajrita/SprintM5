@@ -18,7 +18,7 @@ public class UserController implements IUserController {
 	    Gson gson = new Gson();
 	    DBConnection conexion = DBConnection.getInstance();
 	    
-	    String sql = "SELECT * FROM usuarios WHERE username = ? and password = ?";
+	    String sql = "SELECT * FROM users WHERE username = ? and password = ?";
 	    
 	    try {
 	      PreparedStatement statement = conexion.getConnection().prepareStatement(sql);

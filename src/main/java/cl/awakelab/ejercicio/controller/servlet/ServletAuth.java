@@ -1,5 +1,8 @@
 package cl.awakelab.ejercicio.controller.servlet;
 
+import com.fasterxml.jackson.databind.JsonNode;
+import com.fasterxml.jackson.databind.ObjectMapper;
+
 import java.io.IOException;
 import java.io.PrintWriter;
 
@@ -12,6 +15,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import cl.awakelab.ejercicio.controller.UserController;
+import cl.awakelab.ejercicio.model.entity.User;
 
 /**
  * Servlet implementation class Auth
@@ -25,13 +29,15 @@ public class ServletAuth extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-	    
 	    // Crear una instancia del controlador
-	  
 	    UserController userController = new UserController();
-	    String username = request.getParameter("username");
-		String password = request.getParameter("password");
-		System.out.println(username);
+
+	    // Leer los datos del cuerpo de la solicitud en formato JSON
+	    ObjectMapper mapper = new ObjectMapper();
+	    JsonNode jsonNode = mapper.readTree(request.getReader());
+	    String username = jsonNode.get("username").asText();
+	    String password = jsonNode.get("password").asText();
+	    System.out.println(username);
 		String result = userController.login(username, password);
 		
 		if(!result.equals("false")) {
