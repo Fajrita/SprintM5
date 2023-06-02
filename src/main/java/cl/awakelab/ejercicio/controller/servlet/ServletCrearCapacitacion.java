@@ -10,14 +10,14 @@ import javax.servlet.http.HttpServletResponse;
 /**
  * Servlet implementation class CrearCapacitacion
  */
-@WebServlet("/CrearCapacitacion")
-public class CrearCapacitacion extends HttpServlet {
+@WebServlet("/ServletCrearCapacitacion")
+public class ServletCrearCapacitacion extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public CrearCapacitacion() {
+    public ServletCrearCapacitacion() {
         super();
         // TODO Auto-generated constructor stub
     }
