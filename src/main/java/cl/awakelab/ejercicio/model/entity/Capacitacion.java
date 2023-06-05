@@ -1,13 +1,12 @@
 package cl.awakelab.ejercicio.model.entity;
 
-import java.time.LocalTime;
 
 public class Capacitacion {
 
-	private int identificador;
-	private int rutCliente;
+	private int id;
+	private String rutCliente;
 	private String dia;
-	private LocalTime hora;
+	private String hora;
 	private String lugar;
 	private int duracion;
 	private int cantidadAsistentes;
@@ -16,10 +15,10 @@ public class Capacitacion {
 
 	}
 
-	public Capacitacion(int identificador, int rutCliente, String dia, LocalTime hora, String lugar, int duracion,
+	public Capacitacion(int id, String rutCliente, String dia, String hora, String lugar, int duracion,
 			int cantidadAsistentes) {
 		super();
-		this.identificador = identificador;
+		this.id = id;
 		this.rutCliente = rutCliente;
 		this.dia = dia;
 		this.hora = hora;
@@ -28,19 +27,19 @@ public class Capacitacion {
 		this.cantidadAsistentes = cantidadAsistentes;
 	}
 
-	public int getIdentificador() {
-		return identificador;
+	public int getId() {
+		return id;
 	}
 
-	public void setIdentificador(int identificador) {
-		this.identificador = identificador;
+	public void setId(int id) {
+		this.id = id;
 	}
 
-	public int getRutCliente() {
+	public String getRutCliente() {
 		return rutCliente;
 	}
 
-	public void setRutCliente(int rutCliente) {
+	public void setRutCliente(String rutCliente) {
 		this.rutCliente = rutCliente;
 	}
 
@@ -52,11 +51,11 @@ public class Capacitacion {
 		this.dia = dia;
 	}
 
-	public LocalTime getHora() {
+	public String getHora() {
 		return hora;
 	}
 
-	public void setHora(LocalTime hora) {
+	public void setHora(String hora) {
 		this.hora = hora;
 	}
 
@@ -86,7 +85,7 @@ public class Capacitacion {
 
 	@Override
 	public String toString() {
-		return "Capacitacion " + "identificador: " + identificador + ", rutCliente: " + rutCliente + ", dia: " + dia
+		return "Capacitacion " + "identificador: " + id + ", rutCliente: " + rutCliente + ", dia: " + dia
 				+ ", hora: '" + hora + '\'' + ", lugar: '" + lugar + '\'' + ", duracion: " + duracion
 				+ ", cantidadAsistentes: " + cantidadAsistentes;
 	}

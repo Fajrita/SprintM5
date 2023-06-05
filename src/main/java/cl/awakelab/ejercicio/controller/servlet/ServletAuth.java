@@ -15,7 +15,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import cl.awakelab.ejercicio.controller.UserController;
-import cl.awakelab.ejercicio.model.entity.User;
+
 
 /**
  * Servlet implementation class Auth

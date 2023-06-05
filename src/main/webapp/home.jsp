@@ -19,9 +19,23 @@
 	<div class="container mt-5">
 		<!-- <a href="index.jsp">Volver</a> -->
 
+		<div class="card" style="width: 18rem;">
+			<img src="..." class="card-img-top" alt="...">
+			<div class="card-body">
+				<p class="card-text">Some quick example text to build on the
+					card title and make up the bulk of the card's content.</p>
+						
+				<div class="d-grid gap-2">
+					<a href="capacitacion.jsp"> 
+					<button class="btn btn-secondary">Crear capacitación</button>
+					</a>
+				</div>
+			</div>
+		</div>
+
 		<div class="row">
 			<div class="col-4">
-				<form action="ServletStudents" method="post">
+				<form action="capacitacion.jsp" method="post">
 					<div class="card" style="width: 18rem;">
 						<img
 							src="https://www.pngall.com/wp-content/uploads/8/College-Student-PNG.png"
@@ -31,12 +45,10 @@
 							<p class="card-text"></p>
 
 						</div>
-						<div class="d-grid gap-2">
-							<button type="submit" class="btn btn-secondary">Crear capacitación</button>
 
-						</div>
 					</div>
 				</form>
+
 
 			</div>
 		</div>

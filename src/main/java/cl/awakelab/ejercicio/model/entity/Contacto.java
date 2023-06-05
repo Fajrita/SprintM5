@@ -50,7 +50,9 @@ public class Contacto {
 	public void setMessage(String message) {
 		this.message = message;
 	}
-	
-	
-	// toString
+
+	@Override
+	public String toString() {
+		return "Contacto [name=" + name + ", email=" + email + ", phone=" + phone + ", message=" + message + "]";
+	}
 }
