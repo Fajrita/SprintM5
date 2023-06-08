@@ -16,7 +16,6 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import cl.awakelab.ejercicio.controller.CapacitacionController;
 
 
-
 /**
  * Servlet implementation class CrearCapacitacion
  */

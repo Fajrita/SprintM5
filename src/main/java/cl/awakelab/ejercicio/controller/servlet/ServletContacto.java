@@ -8,7 +8,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 /**
- * Servlet implementation class ServletContacto
+ * Servlet implementation class Contacto
  */
 @WebServlet("/ServletContacto")
 public class ServletContacto extends HttpServlet {
@@ -19,4 +19,5 @@ public class ServletContacto extends HttpServlet {
 		response.sendRedirect("contacto.jsp");
 		
 	}
+
 }

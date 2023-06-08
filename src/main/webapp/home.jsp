@@ -18,7 +18,7 @@
 	<jsp:include page="navbar.jsp" />
 	<!-- End Navbar -->
 	<div class="container d-flex mt-5">
-		<!-- <a href="index.jsp">Volver</a> -->
+
 
 		<div class="card m-3" style="width: 18rem;">
 			<img src="images/College-Student-PNG.png" class="card-img-top"
