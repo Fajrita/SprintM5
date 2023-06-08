@@ -8,17 +8,15 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 /**
- * Servlet implementation class Index
+ * Servlet implementation class ServletContacto
  */
-@WebServlet("/ServletIndex")
-public class ServletIndex extends HttpServlet {
+@WebServlet("/ServletContacto")
+public class ServletContacto extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-	
-
+       
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-	  
-		response.sendRedirect("index.jsp");
+		  
+		response.sendRedirect("contacto.jsp");
 		
 	}
 }
-
