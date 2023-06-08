@@ -17,16 +17,16 @@
 					aria-current="page" href="ServletIndex">Inicio</a></li>
 				<li class="nav-item"><a class="nav-link" href="ServletContacto">Contacto</a></li>
 				<li class="nav-item"><a class="nav-link"
-					href="ServletCrearCapacitacion">Capacitacion</a></li>
+					href="capacitacion.jsp">Capacitacion</a></li>
 			</ul>
 			<c:if test="${not empty sessionScope.usuario}">
 				<p class="mx-3 mt-3">
 					Bienvenido(a) <span class="fw-bold text-capitalize">
 						${sessionScope.usuario}</span>
 				</p>
-				<form action="">
-					<button class="btn btn-outline-danger" type="submit">
-						Cerrar Sesion</button>
+				<form class="form-inline" action="ServletLogout" method="post">
+					<button class="btn btn-outline-danger my-2 my-sm-0" type="submit">Cerrar
+						sesión</button>
 				</form>
 			</c:if>
 

@@ -1,19 +1,18 @@
 //* vamos a implemetar Jquery
 $(document).ready(function() {
-	$("#form-login").submit(function(event) {
-		event.preventDefault();
-		authUser();
-	});
+  $("#form-login").submit(function(event) {
+    event.preventDefault();
+    authUser();
+  });
 });
 
 //* la funcion Auth() 
 function authUser() {
 
-	let username = $("#user").val();
-	let password = $("#password").val();
+  let username = $("#user").val();
+  let password = $("#password").val();
 
-	//req por body
-	$.ajax({
+$.ajax({
 		type: "POST",
 		contentType: "application/json",
 		url: "./ServletAuth",
@@ -28,9 +27,13 @@ function authUser() {
 			if (parsedResult != false) {
 				let username = parsedResult['username'];
 				document.location.href = "home.jsp?username=" + username;
+				return;
 			}
-		}
-	});
+			if (parsedResult == false) {
+				document.location.href = "index.jsp";
+			}
+   }
+ });
 }
 
 /*
