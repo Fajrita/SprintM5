@@ -5,6 +5,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <link
 	href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css"
 	rel="stylesheet">
@@ -25,7 +26,7 @@
 			pregunta? No dudes en contactarnos directamente. Nuestro equipo te
 			responderá en cuestión de horas.</p>
 
-		<div class="col-md-8 off-set-md-2 mb-md-0 mb-5 justify-content-center">
+		<div class="col-md-8 offset-md-2 mb-md-0 mb-5 justify-content-center">
 			<form id="contact-form" name="contact-form">
 				<div class="row">
 					<div class="col-md-6">
@@ -123,6 +124,10 @@
 	</div> -->
 
 
-
+<!-- 	script bootstrap -->
+	<script
+		src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+		integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
+		crossorigin="anonymous"></script>
 </body>
 </html>

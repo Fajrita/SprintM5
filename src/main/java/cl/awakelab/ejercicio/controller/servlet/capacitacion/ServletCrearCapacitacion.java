@@ -14,6 +14,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 import cl.awakelab.ejercicio.controller.CapacitacionController;
+import cl.awakelab.ejercicio.services.CapacitacionService;
 
 
 /**

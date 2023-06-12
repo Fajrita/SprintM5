@@ -12,7 +12,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-@WebFilter({"/home.jsp", "/contacto.jsp", "/capacitacion.jsp"})
+@WebFilter({"/home.jsp", "/contacto.jsp", "/capacitacion.jsp", "/listaCapacitaciones.jsp"})
 public class FilterAuth implements Filter{
 
   @Override

@@ -4,6 +4,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Login</title>
 <link
 	href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css"
@@ -17,7 +18,7 @@
 
 		<!-- 	Codigo del Formulario Login -->
 		<div class="row mt-5">
-			<div class="col-md-4 offset-md-4 col-sm-6 offset-sm-3 col-8 offset-2">
+			<div class="col-lg-4 offset-lg-4 col-md-6 offset-md-3 col-sm-8 offset-sm-2 col-10 offset-1">
 
 				<form id="form-login">
 					<div class="mb-3">

@@ -4,11 +4,12 @@
 <html>
 <head>
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Insert title here</title>
 <link
 	href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css"
 	rel="stylesheet">
-	<link rel="stylesheet" href="css/styles.css">
+<link rel="stylesheet" href="css/styles.css">
 </head>
 
 <body>
@@ -16,12 +17,12 @@
 	<jsp:include page="navbar.jsp" />
 
 
-	<div class="container">
+	<div class="container mt-3">
 		<h1 class="text-center">Crear Capacitación</h1>
 
 		<!-- 	Codigo del Formulario Capacitacion -->
 		<div class="row mt-5">
-			<div class="col-6 offset-3">
+			<div class="col-10 offset-1 col-md-6 offset-md-3">
 
 				<form id="form-capacitacion">
 					<div>
@@ -73,6 +74,12 @@
 
 
 	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+	<!-- 	script bootstrap -->
+	<script
+		src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+		integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
+		crossorigin="anonymous"></script>
 	<script src="js/capacitacion.js"></script>
+
 </body>
 </html>
