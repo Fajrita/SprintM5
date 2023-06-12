@@ -4,19 +4,21 @@
 <html>
 <head>
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Login</title>
 <link
 	href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css"
 	rel="stylesheet">
+<link rel="stylesheet" href="css/styles.css">
 </head>
 
 <body>
-	<div class="container">
+	<div class="container-fluid mt-3">
 		<h1 class="text-center">Inicie Sesión</h1>
 
 		<!-- 	Codigo del Formulario Login -->
 		<div class="row mt-5">
-			<div class="col-4 offset-4">
+			<div class="col-lg-4 offset-lg-4 col-md-6 offset-md-3 col-sm-8 offset-sm-2 col-10 offset-1">
 
 				<form id="form-login">
 					<div class="mb-3">
@@ -26,14 +28,14 @@
 					</div>
 
 					<div class="mb-3">
-						<label for="password" class="form-label">Ingrese su
-							contraseña</label> <input type="password" class="form-control"
-							id="password" name="password" required />
+						<label for="password" class="form-label">Contraseña</label> <input
+							type="password" class="form-control" id="password"
+							name="password" required />
 
 					</div>
 
 					<div class="d-grid gap-2">
-						<button type="submit" class="btn btn-success">Acceder</button>
+						<button type="submit" class="btn btn-primary">Acceder</button>
 					</div>
 
 				</form>
@@ -44,6 +46,9 @@
 	</div>
 	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 	<script src="js/app.js"></script>
+
+
+
 
 </body>
 </html>

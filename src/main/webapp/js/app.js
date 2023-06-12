@@ -9,11 +9,15 @@ $(document).ready(function() {
 //* la funcion Auth() 
 function authUser() {
 
+<<<<<<< HEAD
 	let username = $("#user").val();
 	let password = $("#password").val();
+=======
+  let username = $("#user").val();
+  let password = $("#password").val();
+>>>>>>> ejercicios
 
-	//req por body
-	$.ajax({
+$.ajax({
 		type: "POST",
 		contentType: "application/json",
 		url: "./ServletAuth",
@@ -28,9 +32,18 @@ function authUser() {
 			if (parsedResult != false) {
 				let username = parsedResult['username'];
 				document.location.href = "home.jsp?username=" + username;
+				return;
 			}
+			if (parsedResult == false) {
+				document.location.href = "index.jsp";
+			}
+<<<<<<< HEAD
 		}
 	});
+=======
+   }
+ });
+>>>>>>> ejercicios
 }
 
 /*

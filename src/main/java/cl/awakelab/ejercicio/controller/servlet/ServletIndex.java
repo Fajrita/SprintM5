@@ -18,7 +18,7 @@ public class ServletIndex extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 	  
 		
-	 System.out.println("estamos en el doGet");	  Cookie [] cookies = request.getCookies();	  	  if(cookies != null) {
+	 System.out.println("estamos en el doGet");	  Cookie [] cookies = request.getCookies();	  	  if(cookies != null) {
 	    for(Cookie cookie: cookies) {
 	      if(cookie.getName().equals("credenciales")) {
 	        response.sendRedirect("home.jsp");
@@ -29,4 +29,3 @@ public class ServletIndex extends HttpServlet {
 	  request.getRequestDispatcher("index.jsp").forward(request, response);
 	}
 }
-

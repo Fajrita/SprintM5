@@ -17,7 +17,11 @@ function createCapacitacion() {
 	$.ajax({
 		type: "POST",
 		contentType: "application/json",
+<<<<<<< HEAD
 		url: "./capacitacion/ServletCrearCapacitacion",
+=======
+		url: "./ServletCrearCapacitacion",
+>>>>>>> ejercicios
 		data: JSON.stringify({
 			rutCliente,
 			dia,
@@ -32,7 +36,11 @@ function createCapacitacion() {
 			//* retornar un false
 			if (parsedResult != false) {
 			
+<<<<<<< HEAD
 				document.location.href = "home.jsp";
+=======
+				document.location.href = "ServletListaCapacitaciones";
+>>>>>>> ejercicios
 			}
 		}
 	});

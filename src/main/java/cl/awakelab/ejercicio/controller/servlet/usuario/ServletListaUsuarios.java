@@ -1,8 +1,4 @@
-<<<<<<< HEAD
 package cl.awakelab.ejercicio.controller.servlet.usuario;
-=======
-package cl.awakelab.ejercicio.controller.servlet;
->>>>>>> ejercicios
 
 import java.io.IOException;
 import javax.servlet.ServletException;
@@ -12,7 +8,6 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 /**
-<<<<<<< HEAD
  * Servlet implementation class ListaUsuarios
  */
 <<<<<<<< HEAD:src/main/java/cl/awakelab/ejercicio/controller/servlet/ServletContacto.java
@@ -50,18 +45,6 @@ public class ServletListaUsuarios extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		doGet(request, response);
-=======
- * Servlet implementation class Contacto
- */
-@WebServlet("/ServletContacto")
-public class ServletContacto extends HttpServlet {
-	private static final long serialVersionUID = 1L;
-       
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		  
-		response.sendRedirect("contacto.jsp");
-		
->>>>>>> ejercicios
 	}
 
 }

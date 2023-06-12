@@ -14,6 +14,10 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 import cl.awakelab.ejercicio.controller.CapacitacionController;
+<<<<<<< HEAD
+=======
+import cl.awakelab.ejercicio.services.CapacitacionService;
+>>>>>>> ejercicios
 
 
 /**
@@ -38,7 +42,11 @@ public class ServletCrearCapacitacion extends HttpServlet {
 	    int cantidadAsistentes = jsonNode.get("cantidadAsistentes").asInt();
 		String result = capacitacionController.createCapacitacion(rutCliente, dia, hora, lugar, duracion, cantidadAsistentes);
 		
+<<<<<<< HEAD
 		
+=======
+			
+>>>>>>> ejercicios
 		response.setContentType("text/html; charset=UTF-8");
 		PrintWriter out = response.getWriter();
 		out.println(result);
@@ -48,4 +56,8 @@ public class ServletCrearCapacitacion extends HttpServlet {
 
 
 
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> ejercicios
