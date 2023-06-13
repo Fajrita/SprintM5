@@ -18,34 +18,50 @@
 
 
 	<div class="container mt-5">
-		<h1 class="text-center">Crear Cliente</h1>
+		<h1 class="text-center">Crear Usuario</h1>
 
 		<!-- 	Codigo del Formulario Capacitacion -->
-		<div class="row mt-5" id="form-usuario">
+
+		<div class="form-floating col-10 offset-1 col-md-6 offset-md-3 mt-4"
+			id="form-usuario">
+			<select name="tipoUsuario" class="form-select" id="floatingSelect"
+				aria-label="Floating label select example">
+				<option selected>Seleccione tipo de usuario</option>
+				<option value="administrativo">Administrativo</option>
+				<option value="cliente">Cliente</option>
+				<option value="profesional">Profesional</option>
+			</select> <label for="floatingSelect">Tipo de usuario</label>
+		</div>
+
+
+
+
+		<!-- <div class="row mt-5" id="form-usuario">
 			<div class="col-10 offset-1 col-md-6 offset-md-3">
 
-				<label>Tipo de usuario:</label> <select name="tipoUsuario">
+				<label class="col-6 offset-3">Tipo de usuario:</label> <select name="tipoUsuario" class="form-select">
 
 					<option selected>Seleccione tipo de usuario</option>
 					<option value="administrativo">Administrativo</option>
 					<option value="cliente">Cliente</option>
 					<option value="profesional">Profesional</option>
-				</select>
-
-				<div id="formulario-container"></div>
-
-				<div class="d-grid gap-2">
-
-					<button type="submit" class="mt-4 btn btn-primary">Crear
-						Capacitación</button>
-
-				</div>
-
-			</div>
+								</div>
 		</div>
 	</div>
+				</select> -->
 
-<!-- 	script bootstrap -->
+		<div id="formulario-container"></div>
+
+		<!--  <div class="d-grid gap-2 ">
+
+					<button type="submit" class="mt-4 btn btn-primary">Crear
+						Capacitación</button> -->
+
+	</div>
+
+
+
+	<!-- 	script bootstrap -->
 	<script
 		src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
 		integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"

@@ -12,9 +12,6 @@ import cl.awakelab.ejercicio.model.entity.Capacitacion;
 
 public class CapacitacionService {
 	
-	
-	
-
 	 public List<Capacitacion> findAllCapacitaciones() {
 		 
 		 System.out.println("list capacitacion");
