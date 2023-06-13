@@ -8,16 +8,12 @@ $(document).ready(function() {
 
 //* la funcion Auth() 
 function authUser() {
-
-<<<<<<< HEAD
+	
 	let username = $("#user").val();
 	let password = $("#password").val();
-=======
-  let username = $("#user").val();
-  let password = $("#password").val();
->>>>>>> ejercicios
 
-$.ajax({
+
+	$.ajax({
 		type: "POST",
 		contentType: "application/json",
 		url: "./ServletAuth",
@@ -37,13 +33,8 @@ $.ajax({
 			if (parsedResult == false) {
 				document.location.href = "index.jsp";
 			}
-<<<<<<< HEAD
 		}
 	});
-=======
-   }
- });
->>>>>>> ejercicios
 }
 
 /*

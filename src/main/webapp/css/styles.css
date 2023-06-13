@@ -1,7 +1,47 @@
-body{
-	background-color: #F2F2F2;
+body {
+	background-color: white;
 	font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
+
 nav {
 	border: 1px solid #6c757d;
+}
+
+.navbar-nav .nav-link:hover {
+	text-decoration: underline;
+	font-weight: bold;
+}
+
+.navbar-nav .nav-item.active .nav-link {
+	text-decoration: underline;
+	color: white;
+}
+
+.btn-logout {
+	color: #fff;
+	background-color: #dc3545;
+	border-color: #dc3545;
+}
+/* login */
+.custom-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+/* capacitacion */
+.custom-form-container {
+	padding: 20px;
+	box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+	border-radius: 5px;
+	background-color: #f8f8f8;
+}
+
+.custom-form-container .form-control {
+	margin-bottom: 15px;
+}
+
+.custom-form-container .btn-primary {
+	width: 100%;
 }

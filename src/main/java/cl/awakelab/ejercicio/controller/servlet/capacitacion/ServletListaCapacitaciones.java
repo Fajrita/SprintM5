@@ -17,19 +17,19 @@ import cl.awakelab.ejercicio.controller.CapacitacionController;
 @WebServlet("/ServletListaCapacitaciones")
 public class ServletListaCapacitaciones extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-       
-	 @Override
-	  protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-	    
-	    CapacitacionController capacitacionController = new CapacitacionController();
-	    System.out.println("Servlet capacitacion inside");
-	    // System.out.println(studentController.findAllStundents()); []
-	    
-	    request.setAttribute("capacitaciones", capacitacionController.findAllCapacitaciones());
-	    // reenviar esta informacion a un JSP
-	    RequestDispatcher dispatcher = request.getRequestDispatcher("/listaCapacitaciones.jsp");
-	    dispatcher.forward(request, response);
-	  }
-	       
-	   
+
+	@Override
+	protected void service(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+
+		CapacitacionController capacitacionController = new CapacitacionController();
+		System.out.println("Servlet capacitacion inside");
+		// System.out.println(studentController.findAllStundents()); []
+
+		request.setAttribute("capacitaciones", capacitacionController.findAllCapacitaciones());
+		// reenviar esta informacion a un JSP
+		RequestDispatcher dispatcher = request.getRequestDispatcher("/listaCapacitaciones.jsp");
+		dispatcher.forward(request, response);
 	}
+
+}
