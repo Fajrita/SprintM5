@@ -22,7 +22,7 @@ public class UsuarioController {
 		Gson gson = new Gson();
 		DBConnection conexion = DBConnection.getInstance();
 
-		String sql = "INSERT INTO capacitaciones (nombre, fecha, run) VALUES (?, ?, ?);";
+		String sql = "INSERT INTO usuarios (nombre, fecha, run) VALUES (?, ?, ?);";
 
 		try {
 			PreparedStatement statement = conexion.getConnection().prepareStatement(sql);

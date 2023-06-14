@@ -25,16 +25,20 @@
 	<div class="container mt-5">
 		<h2 class="text-center mb-4">Lista Usuarios</h2>
 		
-		
-			<div class="form-floating col-10 offset-1 col-md-6 offset-md-3 mt-4"
+		<div class="form-floating col-10 offset-1 col-md-6 offset-md-3 mt-4"
 			id="table-usuario">
 			<select name="tipoUsuario" class="form-select" id="floatingSelect"
 				aria-label="Floating label select example">
-				<option selected>Seleccione tipo de usuario</option>
-				<option value="administrativo">Administrativo</option>
-				<option value="cliente">Cliente</option>
-				<option value="profesional">Profesional</option>
+				<option id="type" selected>Seleccione tipo de usuario</option>
+				<option id="type" value="administrativo">Administrativo</option>
+				<option id="type" value="cliente">Cliente</option>
+				<option id="type" value="profesional">Profesional</option>
 			</select> <label for="floatingSelect">Tipo de usuario</label>
+			
+			<!-- <div class="d-grid gap-2 mt-3 mb-3 col-10 offset-1 col-md-6 offset-md-3 mt-4">
+
+				<button type="submit" class="btn btn-primary" >OK</button>
+			</div> -->
 		</div>
 		
 		<div id="table-container"></div>
@@ -46,6 +50,7 @@
 		crossorigin="anonymous"></script>
 	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 		<script src="js/usuarioTabla.js"></script>
+		<script src="js/listByType.js"></script>
 </body>
 
 </html>

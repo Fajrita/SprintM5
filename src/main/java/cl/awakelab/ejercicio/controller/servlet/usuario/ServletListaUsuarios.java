@@ -27,12 +27,21 @@ public class ServletListaUsuarios extends HttpServlet {
 	@Override
 	protected void service(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		
-		UsuarioController usuarioController = new UsuarioController();
-	
 
+		PrintWriter out = response.getWriter();
+        response.setContentType("text/html");
+	    String typeUser = request.getParameter("type");
+		
+		 UsuarioController usuarioController = new UsuarioController();
+	
+		//   ObjectMapper mapper = new ObjectMapper();
+		//     JsonNode jsonNode = mapper.readTree(request.getReader());
+		//     String tipoUsuario = jsonNode.get("type").asText();
+
+
+		    
 		System.out.println("Servlet usuario inside");
-		request.setAttribute("usuarios", usuarioController.getUsersByType(tipoUsuario) ;
+		request.setAttribute("usuarios", usuarioController.getUsersByType(typeUser));
 		RequestDispatcher dispatcher = request.getRequestDispatcher("/lista-usuarios.jsp");
 		dispatcher.forward(request, response);
 	}

@@ -67,7 +67,7 @@
 					class="card-img-top mt-2" alt="Personas sonriendo">
 				<div class="card-body">
 					<div class="d-flex justify-content-center">
-						<a href="ServletListaUsuarios">
+						<a href="lista-usuarios.jsp">
 							<button class="btn btn-secondary">Listar usuarios</button>
 						</a>
 					</div>
