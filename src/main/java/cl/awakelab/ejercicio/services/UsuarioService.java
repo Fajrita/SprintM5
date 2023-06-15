@@ -52,7 +52,7 @@ public class UsuarioService {
 		
 		case "administrativo":
 			sql = "SELECT * FROM usuarios u JOIN administrativos a ON u.id_usuario = a.id_usuario";
-			
+			System.out.println(sql);
 			try {
 
 				PreparedStatement statement = conexion.getConnection().prepareStatement(sql);
@@ -67,6 +67,7 @@ public class UsuarioService {
 					
 
 					Administrativo administrativo = new Administrativo(nombre, fecha, run, area, experienciaPrevia);
+					
 					usuarios.add(administrativo);
 
 				}
@@ -74,6 +75,7 @@ public class UsuarioService {
 			} catch (Exception e) {
 				System.out.println(e.getMessage());
 			}
+			
 			return usuarios;
 		case "profesional":
 			sql = "SELECT * FROM usuarios u JOIN profesionales p ON u.id_usuario = p.id_usuario";
@@ -99,6 +101,7 @@ public class UsuarioService {
 			} catch (Exception e) {
 				System.out.println(e.getMessage());
 			}
+			System.out.println(usuarios);
 			return usuarios;
 			
 		default:

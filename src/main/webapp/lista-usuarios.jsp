@@ -24,7 +24,7 @@
 	<!-- End Navbar -->
 	<div class="container mt-5">
 		<h2 class="text-center mb-4">Lista Usuarios</h2>
-		
+
 		<div class="form-floating col-10 offset-1 col-md-6 offset-md-3 mt-4"
 			id="table-usuario">
 			<select name="tipoUsuario" class="form-select" id="floatingSelect"
@@ -34,23 +34,23 @@
 				<option id="type" value="cliente">Cliente</option>
 				<option id="type" value="profesional">Profesional</option>
 			</select> <label for="floatingSelect">Tipo de usuario</label>
-			
+
 			<!-- <div class="d-grid gap-2 mt-3 mb-3 col-10 offset-1 col-md-6 offset-md-3 mt-4">
 
 				<button type="submit" class="btn btn-primary" >OK</button>
 			</div> -->
 		</div>
-		
+
 		<div id="table-container"></div>
-		
+
 	</div>
 	<script
 		src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
 		integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
 		crossorigin="anonymous"></script>
 	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-		<script src="js/usuarioTabla.js"></script>
-		<script src="js/listByType.js"></script>
+	<script src="js/usuarioTabla.js"></script>
+	<script src="js/listByType.js"></script>
 </body>
 
 </html>

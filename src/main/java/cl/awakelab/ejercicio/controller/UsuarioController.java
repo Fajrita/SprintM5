@@ -13,9 +13,18 @@ public class UsuarioController {
 
 	UsuarioService usuarioService = new UsuarioService();
 
-	
 	public List<Usuario> getUsersByType(String tipoUsuario) {
-		return usuarioService.getUsersByType(tipoUsuario);
+		try {
+			System.out.println(usuarioService);
+			return usuarioService.getUsersByType(tipoUsuario);
+		} catch (Exception e) {
+
+			System.out.println("Error al obtener usuarios por tipo: " + e.getMessage());
+			e.printStackTrace();
+
+			throw new RuntimeException("Error al obtener usuarios por tipo: " + e.getMessage(), e);
+
+		}
 	}
 
 	public String createUsuario(String nombre, String fecha, int run) {

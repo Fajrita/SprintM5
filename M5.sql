@@ -25,6 +25,17 @@ INSERT INTO capacitaciones (rut_cliente, dia, hora, lugar, duracion, cantidad_as
 
 SELECT * FROM capacitaciones;
 
+-- Insertar datos en la tabla usuarios
+INSERT INTO usuarios (nombre, fecha, run)
+VALUES ('Juan', '2022-05-10', 12345678-9);
+
+-- Insertar datos en la tabla administrativos, relacionados con un usuario existente
+INSERT INTO administrativos (area, experiencia_previa, id_usuario)
+VALUES ('Administración', '5 años', LAST_INSERT_ID());
+
+select * from administrativos;
+SELECT * FROM usuarios u JOIN administrativos a ON u.id_usuario = a.id_usuario
+
 
 
 
