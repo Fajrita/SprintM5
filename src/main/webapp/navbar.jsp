@@ -17,8 +17,6 @@
 				<li class="nav-item"><a class="nav-link active"
 					aria-current="page" href="ServletIndex">Inicio</a></li>
 				<li class="nav-item"><a class="nav-link" href="ServletContacto">Contacto</a></li>
-				<li class="nav-item"><a class="nav-link"
-					href="capacitacion.jsp">Capacitación</a></li>
 			</ul>
 			<c:if test="${not empty sessionScope.usuario}">
 				<p class="mx-3 mt-3">
@@ -27,7 +25,7 @@
 				</p>
 				<form class="form-inline" action="ServletLogout" method="post">
 					<button class="btn btn-outline-danger my-2 my-sm-0" type="submit">Cerrar
-						sesión</button>
+						sesiÃ³n</button>
 				</form>
 			</c:if>
 
