@@ -1,31 +1,30 @@
-document.addEventListener('DOMContentLoaded', () => {
-	const form = document.querySelector('#contact-form');
-	const name = document.querySelector('#name');
-	const email = document.querySelector('#email');
-	const subject = document.querySelector('#subject');
-	const message = document.querySelector('#message');
+$(document).ready(function() {
+	const form = $('#contact-form');
+	const name = $('#name');
+	const email = $('#email');
+	const subject = $('#subject');
+	const message = $('#message');
 
 	function validate() {
 		const specialCharRegex = /^(?=.*[A-Za-z])[A-Za-zñÑáéíóúÁÉÍÓÚ\s]*$/;
-		const specialCharExtRegex =
-			/^(?=.*[A-Za-z])[A-Za-zñÑáéíóúÁÉÍÓÚüÜàèìòùÀÈÌÒÙäëïöüÄËÏÖÜâêîôûÂÊÎÔÛçÇñÑÿŸœŒæÆßðÐøØåÅ\s]+$/;
+		const specialCharExtRegex = /^(?=.*[A-Za-z])[A-Za-zñÑáéíóúÁÉÍÓÚüÜàèìòùÀÈÌÒÙäëïöüÄËÏÖÜâêîôûÂÊÎÔÛçÇñÑÿŸœŒæÆßðÐøØåÅ\s]+$/;
 		const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
 		const errors = {};
 
-		const nameValue = name.value;
-		const emailValue = email.value;
-		const subjectValue = subject.value;
-		const messageValue = message.value;
+		const nameValue = name.val();
+		const emailValue = email.val();
+		const subjectValue = subject.val();
+		const messageValue = message.val();
 
 		const setValid = (element) => {
-			element.classList.remove('is-invalid');
-			element.classList.add('is-valid');
+			element.removeClass('is-invalid');
+			element.addClass('is-valid');
 		};
 
 		const setInvalid = (element) => {
-			element.classList.remove('is-valid');
-			element.classList.add('is-invalid');
+			element.removeClass('is-valid');
+			element.addClass('is-invalid');
 		};
 
 		/**
@@ -81,53 +80,56 @@ document.addEventListener('DOMContentLoaded', () => {
 			setValid(message);
 		}
 
-		Object.entries(errors).forEach(([fieldName, errorMsg]) => {
-			const helpElem = document.querySelector(`#${fieldName}Help`);
+		$.each(errors, function(fieldName, errorMsg) {
+			const helpElem = $(`#${fieldName}Help`);
 			if (errorMsg) {
-				helpElem.textContent = errorMsg;
-				setInvalid(helpElem.parentElement.querySelector(`#${fieldName}`));
+				helpElem.text(errorMsg);
+				setInvalid(helpElem.parent().find(`#${fieldName}`));
 			} else {
-				helpElem.textContent = '';
+				helpElem.text('');
 			}
 		});
 
 		return Object.values(errors).every((errorMsg) => !errorMsg);
 	}
 
-	name.addEventListener('input', () => {
-		const helpElem = document.querySelector('#nameHelp');
-		helpElem.textContent = '';
-		name.classList.remove('is-invalid');
-	});
-	email.addEventListener('input', () => {
-		const helpElem = document.querySelector('#emailHelp');
-		helpElem.textContent = '';
-		email.classList.remove('is-invalid');
-	});
-	subject.addEventListener('input', () => {
-		const helpElem = document.querySelector('#subjectHelp');
-		helpElem.textContent = '';
-		subject.classList.remove('is-invalid');
-	});
-	message.addEventListener('input', () => {
-		const helpElem = document.querySelector('#messageHelp');
-		helpElem.textContent = '';
-		message.classList.remove('is-invalid');
+	name.on('input', () => {
+		const helpElem = $('#nameHelp');
+		helpElem.text('');
+		name.removeClass('is-invalid');
 	});
 
-	form.addEventListener('submit', (event) => {
+	email.on('input', () => {
+		const helpElem = $('#emailHelp');
+		helpElem.text('');
+		email.removeClass('is-invalid');
+	});
+
+	subject.on('input', () => {
+		const helpElem = $('#subjectHelp');
+		helpElem.text('');
+		subject.removeClass('is-invalid');
+	});
+
+	message.on('input', () => {
+		const helpElem = $('#messageHelp');
+		helpElem.text('');
+		message.removeClass('is-invalid');
+	});
+
+	form.on('submit', (event) => {
 		event.preventDefault();
 		if (!validate()) {
 		} else {
 			alert('El formulario se envió correctamente');
-			name.value = '';
-			email.value = '';
-			subject.value = '';
-			message.value = '';
-			name.classList.remove('is-valid', 'is-invalid');
-			email.classList.remove('is-valid', 'is-invalid');
-			subject.classList.remove('is-valid', 'is-invalid');
-			message.classList.remove('is-valid', 'is-invalid');
+			name.val('');
+			email.val('');
+			subject.val('');
+			message.val('');
+			name.removeClass('is-valid is-invalid');
+			email.removeClass('is-valid is-invalid');
+			subject.removeClass('is-valid is-invalid');
+			message.removeClass('is-valid is-invalid');
 		}
 	});
 });

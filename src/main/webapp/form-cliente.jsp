@@ -1,9 +1,8 @@
-
-
-<div class="row mt-5">
-	<div class="col-10 offset-1 col-md-8 offset-md-2">
-
-		<h1>Formulario Cliente</h1>
+<div class="container mt-3">
+	<h1 class="text-center">Formulario Cliente</h1>
+		<div class="row justify-content-center mt-5">
+		<div class="col-12 col-md-6">
+			<div class="custom-form-container">
 
 		<form id="form-cliente" action="crear-usuario-servlet" method="POST">
 
@@ -57,5 +56,8 @@
 			</div>
 
 		</form>
+			</div>
+		</div>
 	</div>
 </div>
+
