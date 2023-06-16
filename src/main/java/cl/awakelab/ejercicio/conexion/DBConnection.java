@@ -8,7 +8,7 @@ public class DBConnection {
 	private static final String DB = "modulo5";
 	private static final String PORT = "3306";
 	private static final String LOGIN = "root";
-	private static final String PASSWORD = "1234";
+	private static final String PASSWORD = "fajre111";
 	private static final String URL_CONEXION = "jdbc:mysql://localhost:" + PORT + "/" + DB;
 	// jdbc:mysql://localhost:3306/M5
 

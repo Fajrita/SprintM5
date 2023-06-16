@@ -25,7 +25,7 @@
 				</p>
 				<form class="form-inline" action="ServletLogout" method="post">
 					<button class="btn btn-outline-danger my-2 my-sm-0" type="submit">Cerrar
-						sesiÃ³n</button>
+						sesión</button>
 				</form>
 			</c:if>
 
