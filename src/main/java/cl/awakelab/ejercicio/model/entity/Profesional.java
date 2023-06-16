@@ -1,6 +1,6 @@
 package cl.awakelab.ejercicio.model.entity;
 
-public class Profesional extends Usuario{
+public class Profesional extends Usuario {
 
 	/**
 	 * Titulo del profesional.
@@ -21,14 +21,14 @@ public class Profesional extends Usuario{
 	/**
 	 * Constructor con parámetros para crear una instancia de Profesional.
 	 *
-	 * @param nombre          El nombre del profesional.
-	 * @param fechaNacimiento La fecha de nacimiento del profesional.
-	 * @param run             El RUN del profesional.
-	 * @param titulo          El título del profesional.
-	 * @param fechaIngreso    La fecha de ingreso del profesional al trabajo.
+	 * @param nombre       El nombre del profesional.
+	 * @param fecha        La fecha de nacimiento del profesional.
+	 * @param run          El RUN del profesional.
+	 * @param titulo       El título del profesional.
+	 * @param fechaIngreso La fecha de ingreso del profesional al trabajo.
 	 */
-	public Profesional(String nombre, String fechaNacimiento, int run, String titulo, String fechaIngreso) {
-		super(nombre, fechaNacimiento, run);
+	public Profesional(String nombre, String fecha, int run, String titulo, String fechaIngreso) {
+		super(nombre, fecha, run);
 		this.titulo = titulo;
 		this.fechaIngreso = fechaIngreso;
 	}

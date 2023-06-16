@@ -1,6 +1,6 @@
 package cl.awakelab.ejercicio.model.entity;
 
-public class Administrativo extends Usuario{
+public class Administrativo extends Usuario {
 
 	/**
 	 * Area en donde trabaja el administrativo.
@@ -22,13 +22,13 @@ public class Administrativo extends Usuario{
 	 * Constructor con parametros para crear una instancia de Administrativo.
 	 *
 	 * @param nombre            El nombre del administrativo.
-	 * @param fechaNacimiento   La fecha de nacimiento del administrativo.
+	 * @param fecha             La fecha de nacimiento del administrativo.
 	 * @param run               El RUN del administrativo.
 	 * @param area              El área de trabajo del administrativo.
 	 * @param experienciaPrevia La experiencia previa del administrativo.
 	 */
-	public Administrativo(String nombre, String fechaNacimiento, int run, String area, String experienciaPrevia) {
-		super(nombre, fechaNacimiento, run);
+	public Administrativo(String nombre, String fecha, int run, String area, String experienciaPrevia) {
+		super(nombre, fecha, run);
 		this.area = area;
 		this.experienciaPrevia = experienciaPrevia;
 	}

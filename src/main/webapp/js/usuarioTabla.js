@@ -1,6 +1,7 @@
 $(document).ready(function() {
-	$("#form-usuario").submit(function(event) {
+	$("#table-usuario").submit(function(event) {
 		event.preventDefault();
+		authUser()
 	});
 });
 
@@ -11,9 +12,9 @@ $(document).ready(function() {
 	// Agregar un evento de cambio
 	selectTipoUsuario.addEventListener('change', function() {
 		let tipoUsuario = selectTipoUsuario.value;
-		let formularioContainer = document.getElementById('formulario-container');
+		let tableContainer = document.getElementById('table-container');
 		
-		let url = "form-" + tipoUsuario + ".jsp";
+		let url = "table-" + tipoUsuario + ".jsp";
 
 		// Hacer una solicitud AJAX para cargar el formulario correspondiente
 		$.ajax({
@@ -21,7 +22,10 @@ $(document).ready(function() {
 			url: url, // Puedes crear un archivo JSP separado para cada tipo de formulario
 			data: { tipoUsuario: tipoUsuario },
 			success: function(response) {
-				formularioContainer.innerHTML = response; // Insertar el formulario en el contenedor
+				tableContainer.innerHTML = response; // Insertar el formulario en el contenedor
 			}
 		});
+		
 	});
+	
+	

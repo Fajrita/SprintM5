@@ -1,8 +1,8 @@
 
 <!-- 	Codigo del Formulario Capacitacion -->
 <div class="row mt-5">
-	<div class="col-6 offset-3">
-		<h1>Form administrativo</h1>
+	<div class="col-10 offset-1 col-md-8 offset-md-2">
+		<h1>Formulario Administrativo</h1>
 
 		<form id="form-administrativo" action="crear-usuario-servlet"
 			method="POST">
@@ -15,7 +15,7 @@
 
 			<div>
 				<label for="fecha" class="form-label">Fecha de
-					nacimiento/creacion:</label> <input type="text" class="form-control"
+					nacimiento:</label> <input type="text" class="form-control"
 					id="fecha" name="fecha" required><br>
 			</div>
 
@@ -35,7 +35,7 @@
 					id="experienciaPrevia" name="experienciaPrevia" required><br>
 			</div>
 
-			<div class="d-grid gap-2">
+			<div class="d-grid gap-2 mt-3 mb-3">
 
 				<button type="submit" class="btn btn-primary">Crear
 					Administrativo</button>

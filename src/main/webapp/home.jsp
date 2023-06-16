@@ -50,12 +50,25 @@
 
 			<div class="card col-xs-12 col-sm-6 col-md-4 m-2"
 				style="width: 18rem;">
-				<img src="images/cathryn-lavery-fMD_Cru6OTk-unsplash.jpg"
+				<img src="images/thomas-lefebvre-gp8BLyaTaA0-unsplash.jpg"
 					class="card-img-top mt-2" alt="Personas sonriendo">
 				<div class="card-body">
 					<div class="d-flex justify-content-center">
 						<a href="crear-usuario.jsp">
 							<button class="btn btn-secondary">Crear usuario</button>
+						</a>
+					</div>
+				</div>
+			</div>
+			
+				<div class="card col-xs-12 col-sm-6 col-md-4 m-2"
+				style="width: 18rem;">
+				<img src="images/sigmund-HsTnjCVQ798-unsplash.jpg"
+					class="card-img-top mt-2" alt="Personas sonriendo">
+				<div class="card-body">
+					<div class="d-flex justify-content-center">
+						<a href="lista-usuarios.jsp">
+							<button class="btn btn-secondary">Listar usuarios</button>
 						</a>
 					</div>
 				</div>

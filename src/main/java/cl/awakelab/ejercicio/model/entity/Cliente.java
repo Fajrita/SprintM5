@@ -1,7 +1,7 @@
 package cl.awakelab.ejercicio.model.entity;
 
-public class Cliente extends Usuario{
-	
+public class Cliente extends Usuario {
+
 	/**
 	 * Número de teléfono del cliente.
 	 */
@@ -13,7 +13,7 @@ public class Cliente extends Usuario{
 	/**
 	 * Sistema de salud del cliente.
 	 */
-	private int sistemaSalud;
+	private String sistemaSalud;
 	/**
 	 * Dirección del cliente.
 	 */
@@ -22,7 +22,6 @@ public class Cliente extends Usuario{
 	 * Comuna del cliente.
 	 */
 	private String comuna;
-
 
 	/**
 	 * Constructor sin parámetros de la clase Cliente.
@@ -35,18 +34,18 @@ public class Cliente extends Usuario{
 	 * /** Crea una instancia de Cliente con los valores proporcionados para las
 	 * propiedades.
 	 *
-	 * @param nombre          El nombre del cliente.
-	 * @param fechaNacimiento La fecha de nacimiento del cliente.
-	 * @param run             El RUN del cliente.
-	 * @param telefono        El número de teléfono del cliente.
-	 * @param afp             La AFP del cliente.
-	 * @param sistemaSalud    El sistema de salud del cliente.
-	 * @param direccion       La dirección del cliente.
-	 * @param comuna          La comuna del cliente.
+	 * @param nombre       El nombre del cliente.
+	 * @param fecha        La fecha de nacimiento del cliente.
+	 * @param run          El RUN del cliente.
+	 * @param telefono     El número de teléfono del cliente.
+	 * @param afp          La AFP del cliente.
+	 * @param sistemaSalud El sistema de salud del cliente.
+	 * @param direccion    La dirección del cliente.
+	 * @param comuna       La comuna del cliente.
 	 */
-	public Cliente(String nombre, String fechaNacimiento, int run, String telefono, String afp, int sistemaSalud,
+	public Cliente(String nombre, String fecha, int run, String telefono, String afp, String sistemaSalud,
 			String direccion, String comuna) {
-		super(nombre, fechaNacimiento, run);
+		super(nombre, fecha, run);
 		this.telefono = telefono;
 		this.afp = afp;
 		this.sistemaSalud = sistemaSalud;
@@ -95,7 +94,7 @@ public class Cliente extends Usuario{
 	 * 
 	 * @return Sistema de salud del cliente.
 	 */
-	public int getSistemaSalud() {
+	public String getSistemaSalud() {
 		return sistemaSalud;
 	}
 
@@ -104,7 +103,7 @@ public class Cliente extends Usuario{
 	 * 
 	 * @param sistemaSalud Sistema de salud del cliente.
 	 */
-	public void setSistemaSalud(int sistemaSalud) {
+	public void setSistemaSalud(String sistemaSalud) {
 		this.sistemaSalud = sistemaSalud;
 	}
 

@@ -5,7 +5,7 @@ import java.sql.DriverManager;
 
 public class DBConnection {
 
-	private static final String DB = "m5";
+	private static final String DB = "modulo5";
 	private static final String PORT = "3306";
 	private static final String LOGIN = "root";
 	private static final String PASSWORD = "fajre111";
@@ -15,7 +15,7 @@ public class DBConnection {
 	// PATRON SINGLETON
 	private static DBConnection instance = null;
 	private Connection connection = null;
-	
+
 	private DBConnection() {
 		try {
 

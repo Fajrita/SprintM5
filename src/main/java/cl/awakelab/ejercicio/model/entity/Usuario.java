@@ -11,7 +11,7 @@ public class Usuario {
 	/**
 	 * Fecha de nacimiento del usuario, por ejemplo: "02/04/1980"
 	 */
-	private String fechaNacimiento;
+	private String fecha;
 	/**
 	 * Run del usuario, por ejemplo: "13.567.833-6"
 	 */
@@ -27,13 +27,13 @@ public class Usuario {
 	 * Constructor para crear una instancia de Usuario.
 	 *
 	 * @param nombre          el nombre del usuario.
-	 * @param fechaNacimiento la fecha de nacimiento del usuario en formato
+	 * @param fecha          la fecha de nacimiento del usuario en formato
 	 *                        "dd/MM/yyyy".
 	 * @param run             el RUN del usuario.
 	 */
-	public Usuario(String nombre, String fechaNacimiento, int run) {
+	public Usuario(String nombre, String fecha, int run) {
 		this.nombre = nombre;
-		this.fechaNacimiento = fechaNacimiento;
+		this.fecha = fecha;
 		this.run = run;
 	}
 
@@ -60,8 +60,8 @@ public class Usuario {
 	 *
 	 * @return la fecha de nacimiento del usuario
 	 */
-	public String getFechaNacimiento() {
-		return fechaNacimiento;
+	public String getFecha() {
+		return fecha;
 	}
 
 	/**
@@ -69,8 +69,8 @@ public class Usuario {
 	 *
 	 * @param fechaNacimiento la nueva fecha de nacimiento del usuario
 	 */
-	public void setFechaNacimiento(String fechaNacimiento) {
-		this.fechaNacimiento = fechaNacimiento;
+	public void setFecha(String fecha) {
+		this.fecha = fecha;
 	}
 
 	/**
