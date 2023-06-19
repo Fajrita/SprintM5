@@ -21,7 +21,7 @@ function getFormByType() {
 			tableContainer.empty();
 
 			if (result.length > 0) {
-				const table = $("<table>").addClass("table");
+				const table = $("<table>").addClass("table table-striped table-bordered display");
 				const thead = $("<thead>").appendTo(table);
 				const tbody = $("<tbody>").appendTo(table);
 
