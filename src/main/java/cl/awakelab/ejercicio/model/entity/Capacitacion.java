@@ -1,6 +1,5 @@
 package cl.awakelab.ejercicio.model.entity;
 
-
 public class Capacitacion {
 
 	private int id;
@@ -10,7 +9,7 @@ public class Capacitacion {
 	private String lugar;
 	private int duracion;
 	private int cantidadAsistentes;
-	
+
 	public Capacitacion() {
 
 	}
@@ -85,8 +84,8 @@ public class Capacitacion {
 
 	@Override
 	public String toString() {
-		return "Capacitacion " + "identificador: " + id + ", rutCliente: " + rutCliente + ", dia: " + dia
-				+ ", hora: '" + hora + '\'' + ", lugar: '" + lugar + '\'' + ", duracion: " + duracion
-				+ ", cantidadAsistentes: " + cantidadAsistentes;
+		return "Capacitacion " + "identificador: " + id + ", rutCliente: " + rutCliente + ", dia: " + dia + ", hora: '"
+				+ hora + '\'' + ", lugar: '" + lugar + '\'' + ", duracion: " + duracion + ", cantidadAsistentes: "
+				+ cantidadAsistentes;
 	}
 }

@@ -1,0 +1,13 @@
+# Ignorar archivos compilados
+*.class
+*.war
+*.jar
+
+# Ignorar carpetas de dependencias
+lib/
+target/
+
+# Ignorar archivos generados por el IDE
+.metadata/
+*.iml
+

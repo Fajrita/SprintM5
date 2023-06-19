@@ -143,4 +143,10 @@ public class Cliente extends Usuario {
 		this.comuna = comuna;
 	}
 
+	@Override
+	public String toString() {
+		return "Cliente [telefono=" + telefono + ", afp=" + afp + ", sistemaSalud=" + sistemaSalud + ", direccion="
+				+ direccion + ", comuna=" + comuna + "]";
+	}
+
 }
