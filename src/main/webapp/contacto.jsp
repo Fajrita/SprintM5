@@ -17,7 +17,7 @@
 
 			<div class="container mt-3">
 				<div class="row">
-					<h1 class="text-center">Contactanos</h1>
+					<h1 class="text-center">Contáctanos</h1>
 
 					<p class="text-center w-responsive mx-auto m-2">¿Tienes alguna
 						pregunta? No dudes en contactarnos directamente. Nuestro equipo te
@@ -30,19 +30,21 @@
 								<div class="row">
 									<div class="col-md-6">
 										<div class="md-form mb-0">
+											<label style="color: red">*</label>
+											<label for="name" class="">Nombre:</label>
 											<small id="nameHelp" class="form-text text-danger"></small> <input
 												type="text" id="name" name="name" class="form-control"
-												placeholder="Nombre Apellido" /> <label style="color: red">*</label>
-											<label for="name" class="">Tu nombre</label>
+												placeholder="Nombre Apellido" /> 
 										</div>
 									</div>
 
 									<div class="col-md-6">
 										<div class="md-form mb-0">
+											<label style="color: red">*</label>
+											<label for="email" class="">Correo:</label>
 											<small id="emailHelp" class="form-text text-danger"></small> <input
 												type="text" id="email" name="email" class="form-control"
-												placeholder="tu@correo.com" /> <label style="color: red">*</label>
-											<label for="email" class="">Tu correo</label>
+												placeholder="tu@correo.com" /> 
 										</div>
 									</div>
 								</div>
@@ -50,11 +52,12 @@
 								<div class="row">
 									<div class="col-md-12">
 										<div class="md-form mb-0">
+											<label
+												style="color: red">*</label> <label for="subject"
+												class="">Asunto:</label>
 											<small id="subjectHelp" class="form-text text-danger"></small> <input
 												type="text" id="subject" name="subject" class="form-control"
-												placeholder="Breve descripción" maxlength="100" /> <label
-												style="color: red">*</label> <label for="subject"
-												class="">Asunto</label>
+												placeholder="Breve descripción" maxlength="100" /> 
 										</div>
 									</div>
 								</div>
@@ -62,12 +65,11 @@
 								<div class="row">
 									<div class="col-md-12">
 										<div class="md-form">
+											<label style="color: red">*</label> <label for="message">Mensaje:</label>
 											<small id="messageHelp" class="form-text text-danger"></small>
 											<textarea id="message" name="message" rows="4"
 												class="form-control md-textarea" maxlength="500"
 												placeholder="Escribe tu mensaje aquí..."></textarea>
-											<label style="color: red">*</label> <label for="message">Tu
-												mensaje</label>
 										</div>
 									</div>
 								</div>

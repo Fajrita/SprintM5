@@ -52,14 +52,14 @@
 
 						<div class="mb-3">
 							<label for="duracion" class="form-label">Duración:</label> <input
-								type="text" class="form-control" id="duracion" name="duracion"
-								placeholder="Ejemplo: 2 horas"> <small id="duracionHelp"
+								type="number" min="1" class="form-control" id="duracion" name="duracion"
+								placeholder="Ingrese el número de horas"> <small id="duracionHelp"
 								class="form-text text-danger"></small>
 						</div>
 
 						<div class="mb-3">
 							<label for="cantidadAsistentes" class="form-label">Cantidad
-								de Asistentes:</label> <input type="text" class="form-control"
+								de Asistentes:</label> <input type="number" min="1" class="form-control"
 								id="cantidadAsistentes" name="cantidadAsistentes"
 								placeholder="Ingrese la cantidad de asistentes"> <small
 								id="cantidadAsistentesHelp" class="form-text text-danger"></small>

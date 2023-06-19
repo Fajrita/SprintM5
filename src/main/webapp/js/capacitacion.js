@@ -1,4 +1,4 @@
-$(document).ready(function() {
+$(document).ready(function () {
 
 	const form = $('#form-capacitacion');
 	const rutCliente = $("#rutCliente");
@@ -102,7 +102,7 @@ $(document).ready(function() {
 			setValid(cantidadAsistentes);
 		}
 
-		$.each(errors, function(fieldName, errorMsg) {
+		$.each(errors, function (fieldName, errorMsg) {
 			const helpElem = $(`#${fieldName}Help`);
 			if (errorMsg) {
 				helpElem.text(errorMsg);
@@ -198,7 +198,7 @@ $(document).ready(function() {
 				duracion: duracionValue,
 				cantidadAsistentes: cantidadAsistentesValue
 			}),
-			success: function(result) {
+			success: function (result) {
 				let parsedResult = JSON.parse(result);
 				console.log(parsedResult)
 				//* retornar un false
