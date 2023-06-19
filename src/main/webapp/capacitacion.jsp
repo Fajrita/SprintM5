@@ -14,7 +14,7 @@
 </head>
 
 <body>
-	<jsp:include page="navbar.jsp"/>
+	<jsp:include page="navbar.jsp" />
 
 	<div class="container mt-3">
 		<h1 class="text-center">Crear Capacitación</h1>
@@ -24,35 +24,45 @@
 				<div class="custom-form-container">
 					<form id="form-capacitacion">
 						<div class="mb-3">
+
 							<label for="rutCliente" class="form-label">RUT del
 								Cliente:</label> <input type="text" class="form-control" id="rutCliente"
-								name="rutCliente">
+								name="rutCliente" placeholder="Ejemplo: 12.345.678-9"> <small
+								id="rutClienteHelp" class="form-text text-danger"></small>
 						</div>
 
 						<div class="mb-3">
 							<label for="dia" class="form-label">Día:</label> <input
-								type="date" class="form-control" id="dia" name="dia">
+								type="date" class="form-control" id="dia" name="dia"> <small
+								id="diaHelp" class="form-text text-danger"></small>
 						</div>
 
 						<div class="mb-3">
 							<label for="hora" class="form-label">Hora:</label> <input
-								type="text" class="form-control" id="hora" name="hora">
+								type="time" class="form-control" id="hora" name="hora">
+							<small id="horaHelp" class="form-text text-danger"></small>
 						</div>
 
 						<div class="mb-3">
 							<label for="lugar" class="form-label">Lugar:</label> <input
-								type="text" class="form-control" id="lugar" name="lugar">
+								type="text" class="form-control" id="lugar" name="lugar"
+								placeholder="Ejemplo: Sala de conferencias"> <small
+								id="lugarHelp" class="form-text text-danger"></small>
 						</div>
 
 						<div class="mb-3">
 							<label for="duracion" class="form-label">Duración:</label> <input
-								type="text" class="form-control" id="duracion" name="duracion">
+								type="text" class="form-control" id="duracion" name="duracion"
+								placeholder="Ejemplo: 2 horas"> <small id="duracionHelp"
+								class="form-text text-danger"></small>
 						</div>
 
 						<div class="mb-3">
 							<label for="cantidadAsistentes" class="form-label">Cantidad
 								de Asistentes:</label> <input type="text" class="form-control"
-								id="cantidadAsistentes" name="cantidadAsistentes">
+								id="cantidadAsistentes" name="cantidadAsistentes"
+								placeholder="Ingrese la cantidad de asistentes"> <small
+								id="cantidadAsistentesHelp" class="form-text text-danger"></small>
 						</div>
 
 						<button type="submit" class="btn btn-primary">Crear

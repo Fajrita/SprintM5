@@ -87,6 +87,11 @@ nav {
 	border-radius: 5px;
 	background-color: var(--secondBackground-color);
 }
+
 .btn-primary, .btn-card {
 	background-color: var(--primary-color);
+}
+
+input::placeholder {
+	font-style: italic;
 }

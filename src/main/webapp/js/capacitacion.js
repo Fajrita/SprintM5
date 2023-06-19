@@ -1,7 +1,13 @@
 $(document).ready(function() {
+
 	const form = $('#form-capacitacion');
 	const rutCliente = $("#rutCliente");
 	const dia = $("#dia");
+
+	// restricción de input #dia
+	const currentDate = new Date().toISOString().split('T')[0];
+	dia.attr('min', currentDate);
+
 	const hora = $("#hora");
 	const lugar = $("#lugar");
 	const duracion = $("#duracion");
@@ -33,6 +39,11 @@ $(document).ready(function() {
 		if (rutClienteValue.length == 0) {
 			errors['rutCliente'] = 'Este campo es obligatorio';
 			setInvalid(rutCliente);
+		} else if (!validateRut(rutClienteValue)) {
+			errors['rutCliente'] = 'El formato del rut es inválido';
+			setInvalid(rutCliente);
+		} else {
+			setValid(rutCliente);
 		}
 
 		/**
@@ -48,11 +59,17 @@ $(document).ready(function() {
 		/**
 		 * input hora validation
 		 */
-		if (horaValue.length == 0) {
+		if (horaValue.length === 0) {
 			errors['hora'] = 'Este campo es obligatorio';
 			setInvalid(hora);
 		} else {
-			setValid(hora);
+			const [inputHour, inputMinutes] = horaValue.split(':').map(Number);
+			if (inputHour < 8 || inputHour > 22 || (inputHour === 22 && inputMinutes !== 0)) {
+				errors['hora'] = 'Ingrese una hora válida entre las 8:00 y las 22:00';
+				setInvalid(hora);
+			} else {
+				setValid(hora);
+			}
 		}
 
 		/**
@@ -100,8 +117,20 @@ $(document).ready(function() {
 
 	rutCliente.on('input', () => {
 		const helpElem = $('#rutClienteHelp');
-		helpElem.text('');
-		rutCliente.removeClass('is-invalid');
+		const rutClienteValue = rutCliente.val();
+
+		if (rutClienteValue.length === 0) {
+			helpElem.text('');
+			rutCliente.removeClass('is-invalid is-valid');
+		} else if (!validateRut(rutClienteValue)) {
+			helpElem.text('El formato del rut es inválido');
+			rutCliente.removeClass('is-valid');
+			rutCliente.addClass('is-invalid');
+		} else {
+			helpElem.text('');
+			rutCliente.removeClass('is-invalid');
+			rutCliente.addClass('is-valid');
+		}
 	});
 
 	dia.on('input', () => {
@@ -139,20 +168,14 @@ $(document).ready(function() {
 		if (!validateForm()) {
 		} else {
 			createCapacitacion();
-/*			rutCliente.val('');
-			dia.val('');
-			hora.val('');
-			lugar.val('');
-			duracion.val('');
-			cantidadAsistentes.val('');
-			rutCliente.removeClass('is-valid is-invalid');
-			dia.removeClass('is-valid is-invalid');
-			hora.removeClass('is-valid is-invalid');
-			lugar.removeClass('is-valid is-invalid');
-			duracion.removeClass('is-valid is-invalid');
-			cantidadAsistentes.removeClass('is-valid is-invalid');*/
 		}
 	});
+
+	function validateRut(rut) {
+		// validación básica para rut chileno (formato XX.XXX.XXX-Y)
+		const rutRegex = /^[0-9]{2}\.[0-9]{3}\.[0-9]{3}-[0-9kK]{1}$/;
+		return rutRegex.test(rut);
+	}
 
 	function createCapacitacion() {
 		const rutClienteValue = rutCliente.val();
@@ -186,43 +209,3 @@ $(document).ready(function() {
 		});
 	}
 });
-
-/*$(document).ready(function() {
-	$("#form-capacitacion").submit(function(event) {
-		event.preventDefault();
-		createCapacitacion();
-	});
-});
-
-function createCapacitacion() {
-	let rutCliente = $("#rutCliente").val();
-	let dia = $("#dia").val();
-	let hora = $("#hora").val();
-	let lugar = $("#lugar").val();
-	let duracion = $("#duracion").val();
-	let cantidadAsistentes = $("#cantidadAsistentes").val();
-
-	//req por body
-	$.ajax({
-		type: "POST",
-		contentType: "application/json",
-		url: "./ServletCrearCapacitacion",
-		data: JSON.stringify({
-			rutCliente,
-			dia,
-			hora,
-			lugar,
-			duracion,
-			cantidadAsistentes
-		}),
-		success: function(result) {
-			let parsedResult = JSON.parse(result);
-			console.log(parsedResult)
-			//* retornar un false
-			if (parsedResult != false) {
-			
-				document.location.href = "ServletListaCapacitaciones";
-			}
-		}
-	});
-}*/
