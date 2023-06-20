@@ -6,11 +6,11 @@ public class Contacto {
 	private String email;
 	private String phone;
 	private String message;
-	
+
 	public Contacto() {
-		
+
 	}
-	
+
 	public Contacto(String name, String email, String phone, String message) {
 		super();
 		this.name = name;

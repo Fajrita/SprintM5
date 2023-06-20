@@ -1,7 +1,5 @@
 package cl.awakelab.ejercicio.model.entity;
 
-
-
 public class Usuario {
 
 	/**
@@ -26,10 +24,9 @@ public class Usuario {
 	/**
 	 * Constructor para crear una instancia de Usuario.
 	 *
-	 * @param nombre          el nombre del usuario.
-	 * @param fecha          la fecha de nacimiento del usuario en formato
-	 *                        "dd/MM/yyyy".
-	 * @param run             el RUN del usuario.
+	 * @param nombre el nombre del usuario.
+	 * @param fecha  la fecha de nacimiento del usuario en formato "dd/MM/yyyy".
+	 * @param run    el RUN del usuario.
 	 */
 	public Usuario(String nombre, String fecha, int run) {
 		this.nombre = nombre;
@@ -89,6 +86,11 @@ public class Usuario {
 	 */
 	public void setRun(int run) {
 		this.run = run;
+	}
+
+	@Override
+	public String toString() {
+		return "Usuario [nombre=" + nombre + ", fecha=" + fecha + ", run=" + run + "]";
 	}
 
 }
