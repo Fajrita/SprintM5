@@ -1,3 +1,4 @@
+// seleciona que tabla se muestra segun tipo de ususario
 $(document).ready(function() {
 	$("#table-usuario").submit(function(event) {
 		event.preventDefault();

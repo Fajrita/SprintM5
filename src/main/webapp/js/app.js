@@ -1,3 +1,4 @@
+// Inicio de sesion
 //* vamos a implemetar Jquery
 $(document).ready(function() {
   $("#form-login").submit(function(event) {

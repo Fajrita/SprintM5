@@ -1,3 +1,4 @@
+// muestra que formulario se despliega para crear un usuario
 $(document).ready(function() {
 	$("#form-usuario").submit(function(event) {
 		event.preventDefault();

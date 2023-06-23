@@ -1,7 +1,7 @@
 <div class="container mt-3">
 	<h1 class="text-center">Formulario Profesional</h1>
 		<div class="row justify-content-center mt-5">
-		<div class="col-12 col-md-6">
+		<div class="col-12 col-md-8 col-lg-6">
 			<div class="custom-form-container">
 
 		<form id="form-profesional" action="crear-usuario-servlet"
