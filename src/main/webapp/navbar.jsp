@@ -16,8 +16,8 @@
                 <li class="nav-item ${pageContext.request.servletPath == '/home.jsp' ? 'active' : ''}">
                     <a class="nav-link" href="ServletIndex">Inicio</a>
                 </li>
-                <li class="nav-item ${pageContext.request.servletPath == '/contacto.jsp' ? 'active' : ''}">
-                    <a class="nav-link" href="ServletContacto">Contacto</a>
+                <li class="nav-item">
+                    <a class="nav-link" href="contacto.jsp">Contacto</a>
                 </li>
             </ul>
             <c:if test="${not empty sessionScope.usuario}">
