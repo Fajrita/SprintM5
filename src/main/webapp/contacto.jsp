@@ -16,15 +16,15 @@
 			<jsp:include page="navbar.jsp" />
 
 			<div class="container mt-3">
-				<div class="row">
+				<div class="row justify-content-center">
 					<h1 class="text-center">Contáctanos</h1>
 
-					<p class="text-center w-responsive mx-auto m-2">¿Tienes alguna
+					<p class="text-center w-responsive mx-auto m-2 d-none d-sm-inline col-lg-8 col-md-10 col-xl-6">¿Tienes alguna
 						pregunta? No dudes en contactarnos directamente. Nuestro equipo te
 						responderá en cuestión de horas.</p>
 
 					<div class="row justify-content-center mt-5">
-					<div class="col-12 col-md-6">
+					<div class="col-12 col-lg-8 col-md-10">
 						<div class="custom-form-container">
 							<form id="contact-form" name="contact-form">
 								<div class="row">

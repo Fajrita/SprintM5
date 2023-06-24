@@ -1,3 +1,4 @@
+// ingreso y validacion de datos para el contacto
 $(document).ready(function() {
 	const form = $('#contact-form');
 	const name = $('#name');
@@ -121,6 +122,7 @@ $(document).ready(function() {
 		event.preventDefault();
 		if (!validate()) {
 		} else {
+			createContacto();
 			alert('El formulario se envió correctamente');
 			name.val('');
 			email.val('');
@@ -132,4 +134,25 @@ $(document).ready(function() {
 			message.removeClass('is-valid is-invalid');
 		}
 	});
+		function createContacto() {
+		
+		const nameValue = name.val();
+		const emailValue = email.val();
+		const subjectValue = subject.val();
+		const messageValue = message.val();
+	
+
+		//req por body
+		$.ajax({
+			type: "POST",
+			contentType: "application/json",
+			url: "./ServletContacto",
+			data: JSON.stringify({
+				name: nameValue,
+				email: emailValue,
+				subject: subjectValue,
+				message: messageValue
+			}),
+		});
+	}
 });
