@@ -58,7 +58,7 @@ uri="http://java.sun.com/jsp/jstl/core"%>
       crossorigin="anonymous"
     ></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="js/usuarioTabla.js"></script>
+<!--     <script src="js/usuarioTabla.js"></script> -->
     <script src="js/listByType.js"></script>
   </body>
 </html>

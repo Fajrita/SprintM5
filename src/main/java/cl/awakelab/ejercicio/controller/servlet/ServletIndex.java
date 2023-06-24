@@ -14,18 +14,19 @@ import javax.servlet.http.HttpServletResponse;
 @WebServlet("/ServletIndex")
 public class ServletIndex extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-    
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-	  
-		
-	 System.out.println("estamos en el doGet");	  Cookie [] cookies = request.getCookies();	  	  if(cookies != null) {
-	    for(Cookie cookie: cookies) {
-	      if(cookie.getName().equals("credenciales")) {
-	        response.sendRedirect("home.jsp");
-	        return;	      
-	        }
-	    }
-	  }
-	  request.getRequestDispatcher("index.jsp").forward(request, response);
+
+	protected void doGet(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+
+		Cookie[] cookies = request.getCookies();
+		if (cookies != null) {
+			for (Cookie cookie : cookies) {
+				if (cookie.getName().equals("credenciales")) {
+					response.sendRedirect("home.jsp");
+					return;
+				}
+			}
+		}
+		request.getRequestDispatcher("index.jsp").forward(request, response);
 	}
 }

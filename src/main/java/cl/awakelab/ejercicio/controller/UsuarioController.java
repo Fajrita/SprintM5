@@ -1,55 +1,36 @@
 package cl.awakelab.ejercicio.controller;
 
-import java.sql.PreparedStatement;
 import java.util.List;
 
-import com.google.gson.Gson;
-
-import cl.awakelab.ejercicio.conexion.DBConnection;
+import cl.awakelab.ejercicio.controller.interfaces.IUsuarioController;
 import cl.awakelab.ejercicio.model.entity.Usuario;
 import cl.awakelab.ejercicio.services.UsuarioService;
 
-public class UsuarioController {
+public class UsuarioController implements IUsuarioController {
 
 	UsuarioService usuarioService = new UsuarioService();
 
+	@Override
 	public List<Usuario> getUsersByType(String tipoUsuario) {
 		try {
 			System.out.println(usuarioService);
 			return usuarioService.getUsersByType(tipoUsuario);
 		} catch (Exception e) {
-
 			System.out.println("Error al obtener usuarios por tipo: " + e.getMessage());
 			e.printStackTrace();
-
 			throw new RuntimeException("Error al obtener usuarios por tipo: " + e.getMessage(), e);
-
 		}
 	}
 
-	public String createUsuario(String nombre, String fecha, int run) {
-		Gson gson = new Gson();
-		DBConnection conexion = DBConnection.getInstance();
-
-		String sql = "INSERT INTO usuarios (nombre, fecha, run) VALUES (?, ?, ?);";
-
+	@Override
+	public void crearUsuario(Usuario usuario) {
 		try {
-			PreparedStatement statement = conexion.getConnection().prepareStatement(sql);
-			statement.setString(1, nombre);
-			statement.setString(2, fecha);
-			statement.setInt(3, run);
-
-			int rowsAffected = statement.executeUpdate();
-
-			if (rowsAffected > 0) {
-				Usuario usuario = new Usuario();
-				return gson.toJson(usuario);
-			}
+			usuarioService.crearUsuario(usuario);
 		} catch (Exception e) {
-			System.out.println(e.getMessage());
+			System.out.println("Error al crear usuario: " + e.getMessage());
+			e.printStackTrace();
+			throw new RuntimeException("Error al crear usuario: " + e.getMessage(), e);
 		}
-
-		return "false";
 	}
 
 }
