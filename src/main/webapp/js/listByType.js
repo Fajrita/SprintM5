@@ -1,3 +1,4 @@
+//crea la tabla de los usuarios por tipo
 $(document).ready(function() {
 	$("#floatingSelect").change(function() {
 		getFormByType();
@@ -18,6 +19,7 @@ function getFormByType() {
 			console.log(result);
 
 			let tableContainer = $("#table-container");
+			tableContainer.addClass("table-responsive");
 			tableContainer.empty();
 
 			if (result.length > 0) {

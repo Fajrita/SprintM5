@@ -18,7 +18,7 @@
 
 	<div class="container">
 		<div class="row custom-center">
-			<div class="card col-md-6 col-lg-4 custom-form-container">
+			<div class="card col-sm-8 col-md-6 col-lg-4 custom-form-container">
 				<div class="card-body p-4">
 					<h5 class="card-title mb-4">Iniciar sesión</h5>
 					<form id="form-login">

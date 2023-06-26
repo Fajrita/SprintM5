@@ -21,7 +21,7 @@
 	<!-- End Navbar -->
 	<div class="container mt-5">
 		<div class="row justify-content-center">
-			<div class="card col-12 col-sm-6 col-md-4 col-lg-4 m-2 custom-card-container">
+			<div class="card col-12 col-sm-8 col-md-4 col-lg-4 m-2 custom-card-container">
 				<img src="images/College-Student-PNG.png" class="card-img-top mt-2"
 					alt="Imagen 1">
 				<div class="card-body">
@@ -33,7 +33,7 @@
 					</div>
 				</div>
 			</div>
-			<div class="card col-12 col-sm-6 col-md-4 col-lg-4 m-2 custom-card-container">
+			<div class="card col-12 col-sm-8 col-md-4 col-lg-4 m-2 custom-card-container">
 				<img src="images/cathryn-lavery-fMD_Cru6OTk-unsplash.jpg"
 					class="card-img-top mt-2" alt="Imagen 2">
 				<div class="card-body">
@@ -45,7 +45,7 @@
 					</div>
 				</div>
 			</div>
-			<div class="card col-12 col-sm-6 col-md-4 col-lg-4 m-2 custom-card-container">
+			<div class="card col-12 col-sm-8 col-md-4 col-lg-4 m-2 custom-card-container">
 				<img src="images/thomas-lefebvre-gp8BLyaTaA0-unsplash.jpg"
 					class="card-img-top mt-2" alt="Imagen 3">
 				<div class="card-body">
@@ -56,7 +56,7 @@
 					</div>
 				</div>
 			</div>
-			<div class="card col-12 col-sm-6 col-md-4 col-lg-4 m-2 custom-card-container">
+			<div class="card col-12 col-sm-8 col-md-4 col-lg-4 m-2 custom-card-container">
 				<img src="images/sigmund-HsTnjCVQ798-unsplash.jpg"
 					class="card-img-top mt-2" alt="Imagen 4">
 				<div class="card-body">

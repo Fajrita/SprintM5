@@ -19,9 +19,6 @@
 
 	<div class="container mt-5">
 		<h1 class="text-center">Crear Usuario</h1>
-
-		<!-- 	Codigo del Formulario Capacitacion -->
-
 		<div class="form-floating col-10 offset-1 col-md-6 offset-md-3 mt-4"
 			id="form-usuario">
 			<select name="tipoUsuario" class="form-select" id="floatingSelect"
@@ -33,29 +30,7 @@
 			</select> <label for="floatingSelect">Tipo de usuario</label>
 		</div>
 
-
-
-
-		<!-- <div class="row mt-5" id="form-usuario">
-			<div class="col-10 offset-1 col-md-6 offset-md-3">
-
-				<label class="col-6 offset-3">Tipo de usuario:</label> <select name="tipoUsuario" class="form-select">
-
-					<option selected>Seleccione tipo de usuario</option>
-					<option value="administrativo">Administrativo</option>
-					<option value="cliente">Cliente</option>
-					<option value="profesional">Profesional</option>
-								</div>
-		</div>
-	</div>
-				</select> -->
-
 		<div id="formulario-container"></div>
-
-		<!--  <div class="d-grid gap-2 ">
-
-					<button type="submit" class="mt-4 btn btn-primary">Crear
-						Capacitación</button> -->
 
 	</div>
 
@@ -67,6 +42,7 @@
 		integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
 		crossorigin="anonymous"></script>
 	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-	<script src="js/usuario.js"></script>
+	<script src="js/formUsuarioByType.js"></script>
+	<script src="js/createUsuario.js"></script>
 </body>
 </html>

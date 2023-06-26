@@ -1,3 +1,4 @@
+// ingreso y validacion de datos para crear capacitaciones
 $(document).ready(function () {
 
 	const form = $('#form-capacitacion');

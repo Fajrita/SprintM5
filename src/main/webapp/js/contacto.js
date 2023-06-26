@@ -1,3 +1,4 @@
+// ingreso y validacion de datos para el contacto
 $(document).ready(function() {
 	const form = $('#contact-form');
 	const name = $('#name');

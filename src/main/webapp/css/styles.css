@@ -19,7 +19,7 @@ body {
 /* navbar */
 nav {
 	border: 1px solid #6c757d;
-	background-color: var(--black-color);
+	background-color: var(--gray-color);
 }
 .navbar {
 	--bs-navbar-toggler-focus-width: 0.0rem;
@@ -45,12 +45,12 @@ nav {
 
 .btn-logout {
 	color: #fff;
-	background-color: var(--black-color);
+	background-color: var(--gray-color);
 	border-color: var(--secondary-color);
 }
 .navbar-toggler {
 	color: #fff;
-	background-color: var(--black-color);
+	background-color: var(--gray-color);
 	border-color: var(--primary-color);
 }
 .navbar {

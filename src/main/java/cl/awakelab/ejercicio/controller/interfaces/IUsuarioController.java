@@ -6,4 +6,6 @@ import cl.awakelab.ejercicio.model.entity.Usuario;
 public interface IUsuarioController {
 	
 	public List<Usuario> getUsersByType(String tipoUsuario);
+	
+	public void crearUsuario(Usuario usuario);
 }
