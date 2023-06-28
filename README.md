@@ -13,10 +13,11 @@ Estas funciones son crear y listar capacitaciones, mandar un formulario de conta
 El proyecto está organizado en las siguientes carpetas y archivos:
 
 - `src`: Contiene el código fuente del proyecto.
-       - Dentro de `src`:
-       - `cl/awakelab/ejercicio`: codigo java.
-       - `webapp`: codigo html, css, js e imagenes utilizadas.
 - `M5.sql`: Contiene un codigo para MySQL con la base de datos del proyecto.
+
+- Dentro de `src`:
+- `cl/awakelab/ejercicio`: codigo java.
+- `webapp`: codigo html, css, js e imagenes utilizadas.
 
 ## Requisitos del sistema
 
