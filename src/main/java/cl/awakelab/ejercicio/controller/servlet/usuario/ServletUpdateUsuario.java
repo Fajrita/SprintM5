@@ -47,7 +47,6 @@ public class ServletUpdateUsuario extends HttpServlet {
 		response.setCharacterEncoding("UTF-8");
 		int id = Integer.parseInt(request.getParameter("id"));
 		String type = request.getParameter("type");
-		System.out.println(type + " , " + id);
 		switch (type) {
 		case "cliente": {
 
@@ -71,8 +70,6 @@ public class ServletUpdateUsuario extends HttpServlet {
 		case "administrativo": {
 
 			Usuario usuario = usuarioController.findByIdUsuario(id, type);
-			System.out.println("el suaurioes: " + usuario);
-			System.out.println("el suaurioes: " + usuario.getNombre());
 			request.setAttribute("nombre", usuario.getNombre());
 			request.setAttribute("fecha", usuario.getFecha());
 			request.setAttribute("run", usuario.getRun());

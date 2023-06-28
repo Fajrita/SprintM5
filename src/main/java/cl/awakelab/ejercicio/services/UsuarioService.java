@@ -225,7 +225,6 @@ public class UsuarioService {
 					String area = rs.getString("area");
 					String experienciaPrevia = rs.getString("experiencia_previa");
 					int idUsuario = rs.getInt("id");
-					System.out.println("el nombre es: " + nombre);
 
 					usuario = new Administrativo(nombre, fecha, run, area, experienciaPrevia, idUsuario);
 				}
