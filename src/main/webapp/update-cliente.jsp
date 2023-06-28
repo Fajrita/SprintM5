@@ -21,7 +21,7 @@
 
 
 	<div class="container mt-5">
-		<h1 class="text-center">Update Usuario</h1>
+		<h1 class="text-center">Modificar Usuario</h1>
 		<div
 			class="form-floating col-12 col-md-8 offset-md-2 col-lg-6 offset-lg-3 mt-4"
 			id="form-usuario">
@@ -88,7 +88,7 @@
 
 								<div class="d-grid gap-2 mt-3 mb-3">
 
-									<button type="submit" class="btn btn-primary">Crear
+									<button type="submit" class="btn btn-primary">Modificar
 										Cliente</button>
 
 								</div>

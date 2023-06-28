@@ -14,6 +14,7 @@ El proyecto está organizado en las siguientes carpetas y archivos:
 
 - `src`: Contiene el código fuente del proyecto.
 - `M5.sql`: Contiene un codigo para MySQL con la base de datos del proyecto.
+- `Sprint M5.docx`: Archivo word donde se demuestra el funcionamiento de la aplicación.
 
 - Dentro de `src`:
 - `cl/awakelab/ejercicio`: codigo java.
