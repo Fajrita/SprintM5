@@ -8,6 +8,7 @@ $(document).ready(function() {
 function getFormByType() {
 	const type = $("#floatingSelect").val();
 
+
 	$.ajax({
 		type: "POST",
 		dataType: "json",
@@ -17,6 +18,7 @@ function getFormByType() {
 		}),
 		success: function(result) {
 			console.log(result);
+
 
 			let tableContainer = $("#table-container");
 			tableContainer.addClass("table-responsive");
@@ -28,16 +30,27 @@ function getFormByType() {
 				const tbody = $("<tbody>").appendTo(table);
 
 				const headers = Object.keys(result[0]);
+
 				const headerRow = $("<tr>").appendTo(thead);
 				headers.forEach(function(header) {
 					$("<th>").text(header).appendTo(headerRow);
+
 				});
 
 				result.forEach(function(usuario) {
 					let row = $("<tr>").appendTo(tbody);
+
+
 					Object.values(usuario).forEach(function(value) {
+
 						$("<td>").text(value).appendTo(row);
 					});
+					let id = usuario.idUsuario;
+					let update = $("<td>").appendTo(row);
+					let a = $("<a>").addClass("text-success").attr("href", "ServletUpdateUsuario?type=" + type + "&id=" + id).appendTo(update);
+					let i = $("<i>").addClass("fa-solid fa-pen-to-square mx-3").appendTo(a);
+
+					console.log(id);
 				});
 
 				tableContainer.append(table);

@@ -10,6 +10,8 @@ public class Profesional extends Usuario {
 	 * Fecha de ingreso al trabajo del Profesional.
 	 */
 	private String fechaIngreso;
+	
+	private int idUsuario;
 
 	/**
 	 * Constructor sin parámetros de profesional.
@@ -27,10 +29,11 @@ public class Profesional extends Usuario {
 	 * @param titulo       El título del profesional.
 	 * @param fechaIngreso La fecha de ingreso del profesional al trabajo.
 	 */
-	public Profesional(String nombre, String fecha, int run, String titulo, String fechaIngreso) {
+	public Profesional(String nombre, String fecha, int run, String titulo, String fechaIngreso, int idUsuario) {
 		super(nombre, fecha, run);
 		this.titulo = titulo;
 		this.fechaIngreso = fechaIngreso;
+		this.idUsuario = idUsuario;
 	}
 
 	/**
@@ -69,8 +72,17 @@ public class Profesional extends Usuario {
 		this.fechaIngreso = fechaIngreso;
 	}
 
+	public int getIdUsuario() {
+		return idUsuario;
+	}
+
+	public void setIdUsuario(int idUsuario) {
+		this.idUsuario = idUsuario;
+	}
+
 	@Override
 	public String toString() {
-		return "Profesional [titulo=" + titulo + ", fechaIngreso=" + fechaIngreso + "]";
+		return "Profesional [titulo=" + titulo + ", fechaIngreso=" + fechaIngreso +  ", id=" + idUsuario + "]";
 	}
+	
 }

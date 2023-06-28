@@ -1,6 +1,7 @@
 package cl.awakelab.ejercicio.model.entity;
 
 public class Usuario {
+	
 
 	/**
 	 * Nombre del usuario, por ejemplo: "Luis"
@@ -28,11 +29,13 @@ public class Usuario {
 	 * @param fecha  la fecha de nacimiento del usuario en formato "dd/MM/yyyy".
 	 * @param run    el RUN del usuario.
 	 */
-	public Usuario(String nombre, String fecha, int run) {
+	public Usuario( String nombre, String fecha, int run) {
+	
 		this.nombre = nombre;
 		this.fecha = fecha;
 		this.run = run;
 	}
+
 
 	/**
 	 * Obtiene el nombre del usuario.

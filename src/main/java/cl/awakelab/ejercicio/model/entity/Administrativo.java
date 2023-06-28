@@ -10,6 +10,8 @@ public class Administrativo extends Usuario {
 	 * Experiencia previa de trabajo del administrativo.
 	 */
 	private String experienciaPrevia;
+	
+	private int idUsuario;
 
 	/**
 	 * Constructor sin parametros de administrativo.
@@ -27,10 +29,11 @@ public class Administrativo extends Usuario {
 	 * @param area              El área de trabajo del administrativo.
 	 * @param experienciaPrevia La experiencia previa del administrativo.
 	 */
-	public Administrativo(String nombre, String fecha, int run, String area, String experienciaPrevia) {
+	public Administrativo( String nombre, String fecha, int run, String area, String experienciaPrevia, int idUsuario) {
 		super(nombre, fecha, run);
 		this.area = area;
 		this.experienciaPrevia = experienciaPrevia;
+		this.idUsuario = idUsuario;
 	}
 
 	/**
@@ -69,9 +72,17 @@ public class Administrativo extends Usuario {
 		this.experienciaPrevia = experienciaPrevia;
 	}
 
+	public int getIdUsuario() {
+		return idUsuario;
+	}
+
+	public void setIdUsuario(int idUsuario) {
+		this.idUsuario = idUsuario;
+	}
+
 	@Override
 	public String toString() {
-		return "Administrativo [area=" + area + ", experienciaPrevia=" + experienciaPrevia + "]";
+		return "Administrativo [area=" + area + ", experienciaPrevia=" + experienciaPrevia + ", id=" + idUsuario + "]";
 	}
 
 }

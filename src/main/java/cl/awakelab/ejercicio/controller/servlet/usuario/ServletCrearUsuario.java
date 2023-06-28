@@ -30,6 +30,8 @@ public class ServletCrearUsuario extends HttpServlet {
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
+		request.setCharacterEncoding("UTF-8");
+		response.setCharacterEncoding("UTF-8");
 		StringBuilder requestBody = new StringBuilder();
 		BufferedReader reader = request.getReader();
 
@@ -49,6 +51,7 @@ public class ServletCrearUsuario extends HttpServlet {
 		String nombre = jsonNode.get("nombre").asText();
 		String fecha = jsonNode.get("fecha").asText();
 		int run = jsonNode.get("run").asInt();
+		int idUsuario = 0;
 
 		Usuario usuario = null;
 		switch (tipoUsuario) {
@@ -58,23 +61,26 @@ public class ServletCrearUsuario extends HttpServlet {
 			String sistemaSalud = jsonNode.get("sistemaSalud").asText();
 			String direccion = jsonNode.get("direccion").asText();
 			String comuna = jsonNode.get("comuna").asText();
-
-			usuario = new Cliente(nombre, fecha, run, telefono, afp, sistemaSalud, direccion, comuna);
+			
+			usuario = new Cliente(nombre, fecha, run, telefono, afp, sistemaSalud, direccion, comuna, idUsuario);
 			break;
 
 		case "administrativo":
+		
 			String area = jsonNode.get("area").asText();
 			String experienciaPrevia = jsonNode.get("experienciaPrevia").asText();
 
-			usuario = new Administrativo(nombre, fecha, run, area, experienciaPrevia);
+			usuario = new Administrativo(nombre, fecha, run, area, experienciaPrevia, idUsuario);
 			System.out.println("case administrativo");
+			System.out.println(usuario);
 			break;
 
 		case "profesional":
 			String titulo = jsonNode.get("titulo").asText();
 			String fechaIngreso = jsonNode.get("fechaIngreso").asText();
+			
 
-			usuario = new Profesional(nombre, fecha, run, titulo, fechaIngreso);
+			usuario = new Profesional(nombre, fecha, run, titulo, fechaIngreso, idUsuario);
 			break;
 
 		default:

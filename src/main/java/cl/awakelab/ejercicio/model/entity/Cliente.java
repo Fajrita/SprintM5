@@ -22,6 +22,8 @@ public class Cliente extends Usuario {
 	 * Comuna del cliente.
 	 */
 	private String comuna;
+	
+	int idUsuario;
 
 	/**
 	 * Constructor sin parámetros de la clase Cliente.
@@ -44,13 +46,14 @@ public class Cliente extends Usuario {
 	 * @param comuna       La comuna del cliente.
 	 */
 	public Cliente(String nombre, String fecha, int run, String telefono, String afp, String sistemaSalud,
-			String direccion, String comuna) {
+			String direccion, String comuna, int idUsuario) {
 		super(nombre, fecha, run);
 		this.telefono = telefono;
 		this.afp = afp;
 		this.sistemaSalud = sistemaSalud;
 		this.direccion = direccion;
 		this.comuna = comuna;
+		this.idUsuario = idUsuario;
 	}
 
 	/**
@@ -142,11 +145,20 @@ public class Cliente extends Usuario {
 	public void setComuna(String comuna) {
 		this.comuna = comuna;
 	}
+	
+
+	public int getIdUsuario() {
+		return idUsuario;
+	}
+
+	public void setIdUsuario(int idUsuario) {
+		this.idUsuario = idUsuario;
+	}
 
 	@Override
 	public String toString() {
 		return "Cliente [telefono=" + telefono + ", afp=" + afp + ", sistemaSalud=" + sistemaSalud + ", direccion="
-				+ direccion + ", comuna=" + comuna + "]";
+				+ direccion + ", comuna=" + comuna + ", id=" + idUsuario + "]";
 	}
 
 }

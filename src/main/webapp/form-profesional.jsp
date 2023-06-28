@@ -34,7 +34,7 @@
 
 					<div>
 						<label for="fechaIngreso" class="form-label">Fecha
-							Ingreso:</label> <input type="text" class="form-control"
+							Ingreso:</label> <input type="date" class="form-control"
 							id="fechaIngreso" name="fechaIngreso" required><br>
 					</div>
 

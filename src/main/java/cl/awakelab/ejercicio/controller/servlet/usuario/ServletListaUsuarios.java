@@ -98,6 +98,7 @@ public class ServletListaUsuarios extends HttpServlet {
 
         String tipoUsuario = request.getParameter("type");
         List<Usuario> usuarios = usuarioController.getUsersByType(tipoUsuario);
+      
 
         String jsonResponse = objectMapper.writeValueAsString(usuarios);
 

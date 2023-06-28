@@ -32,5 +32,25 @@ public class UsuarioController implements IUsuarioController {
 			throw new RuntimeException("Error al crear usuario: " + e.getMessage(), e);
 		}
 	}
+	@Override
+	public Usuario findByIdUsuario(int id, String type) {
+		try {
+			return usuarioService.findByIdUsuario(id, type);
+		} catch (Exception e) {
+			System.out.println("Error al encontrar usuario: " + e.getMessage());
+			e.printStackTrace();
+			throw new RuntimeException("Error al encontrar usuario: " + e.getMessage(), e);
+		}
+		
+	}
+	public void updateUsuario(Usuario usuario, int id) {
+		try {
+			usuarioService.updateUsuario(usuario, id);
+		} catch (Exception e) {
+			System.out.println("Error al crear usuario: " + e.getMessage());
+			e.printStackTrace();
+			throw new RuntimeException("Error al crear usuario: " + e.getMessage(), e);
+		}
+	}
 
 }

@@ -1,4 +1,6 @@
 $(document).ready(function() {
+	
+  
     $("#form-usuario").submit(function(event) {
         event.preventDefault();
     });

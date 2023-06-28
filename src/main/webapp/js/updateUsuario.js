@@ -1,19 +1,31 @@
 $(document).ready(function() {
-	$('#formulario-container').submit(function(event) {
-		event.preventDefault();
-		let typeValue = $('select[name="tipoUsuario"]').val();
 
-		let data = {
-			tipoUsuario: typeValue,
+	// Obtener los parámetros de la URL
+	const parametrosURL = new URLSearchParams(window.location.search);
+
+	// Obtener el valor de 'type' y 'value'
+	let type = parametrosURL.get('type');
+	let id = parametrosURL.get('id');
+	console.log("el id en js es: " + id)
+
+
+
+		
+			$('#form-usuario').submit(function(event) {
+		event.preventDefault();
+		
+				let data = {
+			tipoUsuario: type,
 			nombre: $('#nombre').val(),
 			fecha: $('#fecha').val(),
 			run: $('#run').val()
 		};
 
-		switch (typeValue) {
+		switch (type) {
 			case "administrativo":
 				data.area = $('#area').val();
 				data.experienciaPrevia = $('#experienciaPrevia').val();
+				data.id = id;
 				break;
 
 			case "cliente":
@@ -22,11 +34,13 @@ $(document).ready(function() {
 				data.sistemaSalud = $('#sistemaSalud').val();
 				data.direccion = $('#direccion').val();
 				data.comuna = $('#comuna').val();
+				data.id = id;
 				break;
 
 			case "profesional":
 				data.titulo = $('#titulo').val();
 				data.fechaIngreso = $('#fechaIngreso').val();
+				data.id = id;
 				break;
 
 			default:
@@ -35,7 +49,7 @@ $(document).ready(function() {
 
 		$.ajax({
 			type: 'POST',
-			url: './ServletCrearUsuario',
+			url: './ServletUpdateUsuario',
 			contentType: 'application/json',
 			data: JSON.stringify(data),
 			success: function(response) {
@@ -56,6 +70,7 @@ $(document).ready(function() {
 
                 $('#titulo').val('');
                 $('#fechaIngreso').val('');
+              
                 document.location.href = "lista-usuarios.jsp";
 
 			},
@@ -63,6 +78,9 @@ $(document).ready(function() {
 				console.log("Error al crear el usuario: " + error);
 
 			}
+			
+		});
 		});
 	});
-});
+
+

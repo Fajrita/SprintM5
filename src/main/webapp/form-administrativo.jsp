@@ -1,5 +1,6 @@
 
-
+<%@ page import="cl.awakelab.ejercicio.model.entity.Usuario" %>
+<%@ page import="cl.awakelab.ejercicio.model.entity.Administrativo" %>
 <div class="container mt-3">
 	<h1 class="text-center">Formulario Administrativo</h1>
 
@@ -10,20 +11,21 @@
 				<form id="form-administrativo">
 					<!-- Campos y elementos del formulario para el tipo de usuario administrativo -->
 					<div>
+
 						<label for="nombre" class="form-label">Nombre:</label> <input
-							type="text" class="form-control" id="nombre" name="nombre"
+							type="text" class="form-control" id="nombre" name="nombre" value="${nombre}" 
 							required><br>
 					</div>
 
 					<div>
 						<label for="fecha" class="form-label">Fecha de nacimiento:</label>
-						<input type="date" class="form-control" id="fecha" name="fecha"
+						<input type="date" class="form-control" id="fecha" name="fecha" 
 							required><br>
 					</div>
 
 					<div>
 						<label for="run" class="form-label">Run:</label> <input
-							type="text" class="form-control" id="run" name="run" required><br>
+							type="text" class="form-control" id="run" name="run" value="${run}" required><br>
 					</div>
 
 					<div>

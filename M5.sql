@@ -1,5 +1,11 @@
 CREATE DATABASE modulo5;
 USE modulo5;
+
+drop table usuarios;
+drop table clientes;
+drop table administrativos;
+drop table profesionales;
+
 CREATE TABLE users (
     id INT AUTO_INCREMENT PRIMARY KEY,
     username VARCHAR(50) NOT NULL,
@@ -59,6 +65,7 @@ FROM administrativos;
 SELECT *
 FROM usuarios u
     JOIN administrativos a ON u.id_usuario = a.id_usuario;
+    
 -- Crear la tabla profesionales
 CREATE TABLE profesionales (
     id_profesional INT PRIMARY KEY AUTO_INCREMENT,
@@ -67,13 +74,14 @@ CREATE TABLE profesionales (
     id_usuario INT,
     FOREIGN KEY (id_usuario) REFERENCES usuarios(id_usuario)
 );
+
 -- Insertar datos en la tabla usuarios
-INSERT INTO usuarios (nombre, fecha_nacimiento, run)
+INSERT INTO usuarios (nombre, fecha, run)
 VALUES ('Mario', '2000-01-01', 12345678);
 -- Insertar datos en la tabla profesionales, relacionados con un usuario existente
 INSERT INTO profesionales (titulo, fecha_ingreso, id_usuario)
 VALUES ('Enfermero', '2022-01-01', LAST_INSERT_ID());
-drop table Profesionales;
+
 -- Crear la tabla clientes
 CREATE TABLE clientes (
     id_cliente INT PRIMARY KEY AUTO_INCREMENT,
@@ -85,6 +93,7 @@ CREATE TABLE clientes (
     id_usuario INT,
     FOREIGN KEY (id_usuario) REFERENCES usuarios(id_usuario)
 );
+
 -- Insertar datos en la tabla usuarios
 INSERT INTO usuarios (nombre, fecha, run)
 VALUES ('Diego', '1985-05-20', 12345678);
@@ -105,3 +114,12 @@ VALUES (
         'Santiago',
         LAST_INSERT_ID()
     );
+    
+
+SELECT * FROM usuarios u JOIN profesionales p ON u.id_usuario = p.id_usuario;
+SELECT * FROM usuarios u JOIN clientes c ON u.id_usuario = c.id_usuario;
+SELECT * FROM usuarios u JOIN administrativos a ON u.id_usuario = a.id_usuario;
+SELECT * FROM usuarios u JOIN administrativos a ON u.id_usuario = a.id_usuario where id = 2;
+SELECT * from usuarios;
+SELECT * from clientes;
+SELECT * from administrativos;
