@@ -45,10 +45,6 @@ uri="http://java.sun.com/jsp/jstl/core"%>
         </select>
         <label for="floatingSelect">Tipo de usuario</label>
 
-        <!-- <div class="d-grid gap-2 mt-3 mb-3 col-10 offset-1 col-md-6 offset-md-3 mt-4">
-
-				<button type="submit" class="btn btn-primary" >OK</button>
-			</div> -->
       </div>
       <div class="container mt-5">
         <div id="table-container"></div>
@@ -61,7 +57,6 @@ uri="http://java.sun.com/jsp/jstl/core"%>
       crossorigin="anonymous"
     ></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-<!--     <script src="js/usuarioTabla.js"></script> -->
     <script src="js/listByType.js"></script>
   </body>
 </html>

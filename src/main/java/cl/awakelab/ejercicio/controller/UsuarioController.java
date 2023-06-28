@@ -47,9 +47,9 @@ public class UsuarioController implements IUsuarioController {
 		try {
 			usuarioService.updateUsuario(usuario, id);
 		} catch (Exception e) {
-			System.out.println("Error al crear usuario: " + e.getMessage());
+			System.out.println("Error al modificar usuario: " + e.getMessage());
 			e.printStackTrace();
-			throw new RuntimeException("Error al crear usuario: " + e.getMessage(), e);
+			throw new RuntimeException("Error al modificar usuario: " + e.getMessage(), e);
 		}
 	}
 

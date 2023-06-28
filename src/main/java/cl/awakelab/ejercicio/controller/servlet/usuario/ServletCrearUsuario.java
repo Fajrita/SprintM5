@@ -41,7 +41,6 @@ public class ServletCrearUsuario extends HttpServlet {
 		}
 
 		String jsonData = requestBody.toString();
-		System.out.println(jsonData);
 
 		ObjectMapper mapper = new ObjectMapper();
 		JsonNode jsonNode = mapper.readTree(jsonData);

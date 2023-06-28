@@ -1,3 +1,4 @@
+// permite crear un usuario por tipo via post al ServletCrearUsuario
 $(document).ready(function() {
 	$('#formulario-container').submit(function(event) {
 		event.preventDefault();

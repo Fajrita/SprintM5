@@ -18,14 +18,7 @@
 	<jsp:include page="navbar.jsp" />
 
 <%@ page import="javax.servlet.http.HttpServletRequest" %>
-<%
-  String type = request.getParameter("type");
-  String id = request.getParameter("id");
-  
 
-  
-  // Aquí puedes utilizar los valores de type y value como desees
-%>
 
 	<div class="container mt-5">
 		<h1 class="text-center">Update Usuario</h1>
@@ -42,7 +35,6 @@
 
 			<div class="custom-form-container">
 				<form id="form-administrativo">
-					<!-- Campos y elementos del formulario para el tipo de usuario administrativo -->
 					<div>
 						<label for="nombre" class="form-label">Nombre:</label> <input
 							type="text" class="form-control" id="nombre" name="nombre" value="${nombre}"

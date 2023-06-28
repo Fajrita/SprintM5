@@ -72,7 +72,7 @@ public class UsuarioService {
 					Administrativo administrativo = new Administrativo(nombre, fecha, run, area, experienciaPrevia,
 							idUsuario);
 					usuarios.add(administrativo);
-					
+
 				}
 
 			} catch (Exception e) {
@@ -82,7 +82,6 @@ public class UsuarioService {
 			return usuarios;
 		case "profesional":
 			sql = "SELECT * FROM usuarios u JOIN profesionales p ON u.id_usuario = p.id_usuario";
-			
 
 			try {
 				PreparedStatement statement = conexion.getConnection().prepareStatement(sql);
@@ -95,18 +94,15 @@ public class UsuarioService {
 					String titulo = rs.getString("titulo");
 					String fechaIngreso = rs.getString("fecha_ingreso");
 					int idUsuario = rs.getInt("id_profesional");
-					System.out.println("id del wwhile" + idUsuario);
-				
 
 					Profesional profesional = new Profesional(nombre, fecha, run, titulo, fechaIngreso, idUsuario);
 					usuarios.add(profesional);
-					System.out.println(profesional);
 				}
 
 			} catch (Exception e) {
 				System.out.println(e.getMessage());
 			}
-			
+
 			System.out.println(usuarios);
 			return usuarios;
 
@@ -145,14 +141,13 @@ public class UsuarioService {
 						clienteStatement.setString(3, cliente.getSistemaSalud());
 						clienteStatement.setString(4, cliente.getDireccion());
 						clienteStatement.setString(5, cliente.getComuna());
-						clienteStatement.setInt(6,  idUsuario);
+						clienteStatement.setInt(6, idUsuario);
 						clienteStatement.executeUpdate();
 					}
 					System.out.println("Usuario cliente creado exitosamente");
 				} else if (usuario instanceof Administrativo) {
 					Administrativo administrativo = (Administrativo) usuario;
-					sql = "INSERT INTO administrativos (area, experiencia_previa, id_usuario) "
-							+ "VALUES (?, ?, ?)";
+					sql = "INSERT INTO administrativos (area, experiencia_previa, id_usuario) " + "VALUES (?, ?, ?)";
 					try (PreparedStatement administrativoStatement = conexion.getConnection().prepareStatement(sql)) {
 
 						administrativoStatement.setString(1, administrativo.getArea());
@@ -190,12 +185,10 @@ public class UsuarioService {
 		switch (type) {
 		case "cliente": {
 			String sql = "SELECT * FROM usuarios u JOIN clientes c ON u.id_usuario = c.id_usuario where id_cliente = ?";
-			System.out.println("id heredado: " + id);
 			try {
 				PreparedStatement statement = conexion.getConnection().prepareStatement(sql);
 				statement.setInt(1, id);
 				ResultSet rs = statement.executeQuery();
-				System.out.println("query existosa");
 
 				if (rs.next()) {
 					String nombre = rs.getString("nombre");
@@ -207,11 +200,9 @@ public class UsuarioService {
 					String direccion = rs.getString("direccion");
 					String comuna = rs.getString("comuna");
 					int idUsuario = rs.getInt("id_cliente");
-					System.out.println("el nombre es: " + nombre);
 
 					usuario = new Cliente(nombre, fecha, run, telefono, afp, sistemaSalud, direccion, comuna,
 							idUsuario);
-					System.out.println(usuario.getNombre());
 				}
 
 			} catch (Exception e) {
@@ -222,12 +213,10 @@ public class UsuarioService {
 		}
 		case "administrativo": {
 			String sql = "SELECT * FROM usuarios u JOIN administrativos a ON u.id_usuario = a.id_usuario where id = ?";
-			System.out.println("id heredado: " + id);
 			try {
 				PreparedStatement statement = conexion.getConnection().prepareStatement(sql);
 				statement.setInt(1, id);
 				ResultSet rs = statement.executeQuery();
-				System.out.println("query existosa");
 
 				if (rs.next()) {
 					String nombre = rs.getString("nombre");
@@ -239,7 +228,6 @@ public class UsuarioService {
 					System.out.println("el nombre es: " + nombre);
 
 					usuario = new Administrativo(nombre, fecha, run, area, experienciaPrevia, idUsuario);
-					System.out.println(usuario.getNombre());
 				}
 
 			} catch (Exception e) {
@@ -251,12 +239,10 @@ public class UsuarioService {
 		}
 		case "profesional": {
 			String sql = "SELECT * FROM usuarios u JOIN profesionales p ON u.id_usuario = p.id_usuario where id_profesional = ?";
-			System.out.println("id heredado: " + id);
 			try {
 				PreparedStatement statement = conexion.getConnection().prepareStatement(sql);
 				statement.setInt(1, id);
 				ResultSet rs = statement.executeQuery();
-				System.out.println("query existosa");
 
 				if (rs.next()) {
 					String nombre = rs.getString("nombre");
@@ -265,10 +251,8 @@ public class UsuarioService {
 					String titulo = rs.getString("titulo");
 					String fechaIngreso = rs.getString("fecha_ingreso");
 					int idUsuario = rs.getInt("id_profesional");
-					System.out.println("el nombre es: " + nombre);
 
 					usuario = new Profesional(nombre, fecha, run, titulo, fechaIngreso, idUsuario);
-					System.out.println(usuario.getNombre());
 				}
 
 			} catch (Exception e) {
@@ -288,99 +272,99 @@ public class UsuarioService {
 		DBConnection conexion = DBConnection.getInstance();
 		String sql;
 
-				if (usuario instanceof Cliente) {
-					Cliente cliente = (Cliente) usuario;
-					sql = "UPDATE clientes SET telefono = ?, afp = ?, sistema_salud = ?, direccion = ?, comuna = ? WHERE id_cliente = ?";
-					try (PreparedStatement clienteStatement = conexion.getConnection().prepareStatement(sql)) {
-						clienteStatement.setInt(6, id);
-						clienteStatement.setString(1, cliente.getTelefono());
-						clienteStatement.setString(2, cliente.getAfp());
-						clienteStatement.setString(3, cliente.getSistemaSalud());
-						clienteStatement.setString(4, cliente.getDireccion());
-						clienteStatement.setString(5, cliente.getComuna());
-						clienteStatement.setInt(6, cliente.getIdUsuario());
-						clienteStatement.executeUpdate();
-						
-						 sql = "UPDATE usuarios SET nombre = ?, fecha = ? WHERE run = ?";
-						 try (PreparedStatement statement = conexion.getConnection().prepareStatement(sql,
-									Statement.RETURN_GENERATED_KEYS)) {
-							 
-								statement.setString(1, usuario.getNombre());
-								statement.setString(2, usuario.getFecha());
-								statement.setInt(3, usuario.getRun());
-								
-								statement.executeUpdate();
-							
-						} catch (Exception e) {
-							System.out.println(e.getMessage());
-						}
-					}
-					catch (Exception e) {
-						System.out.println(e.getMessage());
-					}
-					System.out.println("Usuario cliente update exitosamente");
-				} else if (usuario instanceof Administrativo) {
-					Administrativo administrativo = (Administrativo) usuario;
-					sql = "UPDATE administrativos SET  area = ?, experiencia_previa = ? WHERE id = ?";
-							
-					try (PreparedStatement administrativoStatement = conexion.getConnection().prepareStatement(sql)) {
+		if (usuario instanceof Cliente) {
+			Cliente cliente = (Cliente) usuario;
+			sql = "UPDATE clientes SET telefono = ?, afp = ?, sistema_salud = ?, direccion = ?, comuna = ? WHERE id_cliente = ?";
+			try (PreparedStatement clienteStatement = conexion.getConnection().prepareStatement(sql)) {
+				clienteStatement.setInt(6, id);
+				clienteStatement.setString(1, cliente.getTelefono());
+				clienteStatement.setString(2, cliente.getAfp());
+				clienteStatement.setString(3, cliente.getSistemaSalud());
+				clienteStatement.setString(4, cliente.getDireccion());
+				clienteStatement.setString(5, cliente.getComuna());
+				clienteStatement.setInt(6, cliente.getIdUsuario());
+				clienteStatement.executeUpdate();
 
-						administrativoStatement.setString(1, administrativo.getArea());
-						administrativoStatement.setString(2, administrativo.getExperienciaPrevia());
-						administrativoStatement.setInt(3, administrativo.getIdUsuario());
-						administrativoStatement.executeUpdate();
-						
-						 sql = "UPDATE usuarios SET nombre = ?, fecha = ? WHERE run = ?";
-						 try (PreparedStatement statement = conexion.getConnection().prepareStatement(sql,
-									Statement.RETURN_GENERATED_KEYS)) {
-							 
-								statement.setString(1, usuario.getNombre());
-								statement.setString(2, usuario.getFecha());
-								statement.setInt(3, usuario.getRun());
-								
-								statement.executeUpdate();
-							
-						} catch (Exception e) {
-							System.out.println(e.getMessage());
-						}
-					}catch (Exception e) {
-						System.out.println(e.getMessage());
-					}
-					System.out.println("Usuario administrativo update exitosamente");
-		
-				} else if (usuario instanceof Profesional) {
-					Profesional profesional = (Profesional) usuario;
-					sql = "UPDATE profesionales SET  titulo = ?, fecha_ingreso = ? WHERE id_profesional = ?";
-					try (PreparedStatement profesionalStatement = conexion.getConnection().prepareStatement(sql)) {
+				sql = "UPDATE usuarios SET nombre = ?, fecha = ? WHERE run = ?";
+				try (PreparedStatement statement = conexion.getConnection().prepareStatement(sql,
+						Statement.RETURN_GENERATED_KEYS)) {
 
-						profesionalStatement.setString(1, profesional.getTitulo());
-						profesionalStatement.setString(2, profesional.getFechaIngreso());
-						profesionalStatement.setInt(3, profesional.getIdUsuario());
-						profesionalStatement.executeUpdate();
-						
-						sql = "UPDATE usuarios SET nombre = ?, fecha = ? WHERE run = ?";
-						 try (PreparedStatement statement = conexion.getConnection().prepareStatement(sql,
-									Statement.RETURN_GENERATED_KEYS)) {
-							 
-								statement.setString(1, usuario.getNombre());
-								statement.setString(2, usuario.getFecha());
-								statement.setInt(3, usuario.getRun());
-								
-								statement.executeUpdate();
-							
-						} catch (Exception e) {
-							System.out.println(e.getMessage());
-						}
-					}catch (Exception e) {
-						System.out.println(e.getMessage());
-					
-					}
-					System.out.println("Usuario profesional creado exitosamente");
-				
-			}else
+					statement.setString(1, usuario.getNombre());
+					statement.setString(2, usuario.getFecha());
+					statement.setInt(3, usuario.getRun());
 
-	{
-				System.out.println("No se pudo crear el usuario en la base de datos");
+					statement.executeUpdate();
+
+				} catch (Exception e) {
+					System.out.println(e.getMessage());
+				}
+			} catch (Exception e) {
+				System.out.println(e.getMessage());
+			}
+			System.out.println("Usuario cliente updated exitosamente");
+		} else if (usuario instanceof Administrativo) {
+			Administrativo administrativo = (Administrativo) usuario;
+			sql = "UPDATE administrativos SET  area = ?, experiencia_previa = ? WHERE id = ?";
+
+			try (PreparedStatement administrativoStatement = conexion.getConnection().prepareStatement(sql)) {
+
+				administrativoStatement.setString(1, administrativo.getArea());
+				administrativoStatement.setString(2, administrativo.getExperienciaPrevia());
+				administrativoStatement.setInt(3, administrativo.getIdUsuario());
+				administrativoStatement.executeUpdate();
+
+				sql = "UPDATE usuarios SET nombre = ?, fecha = ? WHERE run = ?";
+				try (PreparedStatement statement = conexion.getConnection().prepareStatement(sql,
+						Statement.RETURN_GENERATED_KEYS)) {
+
+					statement.setString(1, usuario.getNombre());
+					statement.setString(2, usuario.getFecha());
+					statement.setInt(3, usuario.getRun());
+
+					statement.executeUpdate();
+
+				} catch (Exception e) {
+					System.out.println(e.getMessage());
+				}
+			} catch (Exception e) {
+				System.out.println(e.getMessage());
+			}
+			System.out.println("Usuario administrativo updated exitosamente");
+
+		} else if (usuario instanceof Profesional) {
+			Profesional profesional = (Profesional) usuario;
+			sql = "UPDATE profesionales SET  titulo = ?, fecha_ingreso = ? WHERE id_profesional = ?";
+			try (PreparedStatement profesionalStatement = conexion.getConnection().prepareStatement(sql)) {
+
+				profesionalStatement.setString(1, profesional.getTitulo());
+				profesionalStatement.setString(2, profesional.getFechaIngreso());
+				profesionalStatement.setInt(3, profesional.getIdUsuario());
+				profesionalStatement.executeUpdate();
+
+				sql = "UPDATE usuarios SET nombre = ?, fecha = ? WHERE run = ?";
+				try (PreparedStatement statement = conexion.getConnection().prepareStatement(sql,
+						Statement.RETURN_GENERATED_KEYS)) {
+
+					statement.setString(1, usuario.getNombre());
+					statement.setString(2, usuario.getFecha());
+					statement.setInt(3, usuario.getRun());
+
+					statement.executeUpdate();
+
+				} catch (Exception e) {
+					System.out.println(e.getMessage());
+				}
+			} catch (Exception e) {
+				System.out.println(e.getMessage());
+
+			}
+			System.out.println("Usuario profesional updated exitosamente");
+
+		} else
+
+		{
+			System.out.println("No se pudo crear el usuario en la base de datos");
+		}
+
 	}
-
-}}
+}

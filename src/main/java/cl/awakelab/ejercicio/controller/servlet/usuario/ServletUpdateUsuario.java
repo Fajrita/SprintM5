@@ -86,10 +86,9 @@ public class ServletUpdateUsuario extends HttpServlet {
 
 		}
 		case "profesional": {
-			
+
 			Usuario usuario = usuarioController.findByIdUsuario(id, type);
-			System.out.println("el suaurioes: " + usuario);
-			System.out.println("el suaurioes: " + usuario.getNombre());
+
 			request.setAttribute("nombre", usuario.getNombre());
 			request.setAttribute("fecha", usuario.getFecha());
 			request.setAttribute("run", usuario.getRun());
@@ -105,7 +104,6 @@ public class ServletUpdateUsuario extends HttpServlet {
 		default:
 			throw new IllegalArgumentException("Unexpected value: " + type);
 		}
-
 
 		// Redirigir a la página de actualización del usuario
 //        RequestDispatcher dispatcher = request.getRequestDispatcher("/update-usuario.jsp");
@@ -143,7 +141,7 @@ public class ServletUpdateUsuario extends HttpServlet {
 		int idUsuario = jsonNode.get("id").asInt();
 
 		Usuario usuario = null;
-		
+
 		switch (tipoUsuario) {
 		case "cliente":
 			String telefono = jsonNode.get("telefono").asText();
@@ -159,7 +157,7 @@ public class ServletUpdateUsuario extends HttpServlet {
 			idUsuario = 0;
 			String area = jsonNode.get("area").asText();
 			String experienciaPrevia = jsonNode.get("experienciaPrevia").asText();
-			 idUsuario = jsonNode.get("id").asInt();
+			idUsuario = jsonNode.get("id").asInt();
 
 			usuario = new Administrativo(nombre, fecha, run, area, experienciaPrevia, idUsuario);
 			System.out.println("case administrativo");
@@ -181,6 +179,5 @@ public class ServletUpdateUsuario extends HttpServlet {
 
 		response.getWriter().println("Usuario creado exitosamente");
 	}
-	
 
 }

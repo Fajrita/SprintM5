@@ -22,8 +22,6 @@ public class ServletListaCapacitaciones extends HttpServlet {
 	  protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 	    
 	    CapacitacionController capacitacionController = new CapacitacionController();
-	    System.out.println("Servlet capacitacion inside");
-	    // System.out.println(studentController.findAllStundents()); []
 	    
 	    request.setAttribute("capacitaciones", capacitacionController.findAllCapacitaciones());
 	    // reenviar esta informacion a un JSP

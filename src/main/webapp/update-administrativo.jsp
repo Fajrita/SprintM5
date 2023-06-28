@@ -18,14 +18,7 @@
 	<jsp:include page="navbar.jsp" />
 
 <%@ page import="javax.servlet.http.HttpServletRequest" %>
-<%
-  String type = request.getParameter("type");
-  String id = request.getParameter("id");
-  
 
-  
-  // Aquí puedes utilizar los valores de type y value como desees
-%>
 
 	<div class="container mt-5">
 		<h1 class="text-center">Update Usuario</h1>

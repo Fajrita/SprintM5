@@ -1,3 +1,4 @@
+// pasa los datos del usuario modificados al ServletUpdateUsuario 
 $(document).ready(function() {
 
 	// Obtener los parámetros de la URL
@@ -6,7 +7,6 @@ $(document).ready(function() {
 	// Obtener el valor de 'type' y 'value'
 	let type = parametrosURL.get('type');
 	let id = parametrosURL.get('id');
-	console.log("el id en js es: " + id)
 
 
 
@@ -75,7 +75,7 @@ $(document).ready(function() {
 
 			},
 			error: function(error) {
-				console.log("Error al crear el usuario: " + error);
+				console.log("Error al modificar el usuario: " + error);
 
 			}
 			

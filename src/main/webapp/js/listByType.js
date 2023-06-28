@@ -50,7 +50,6 @@ function getFormByType() {
 					let a = $("<a>").addClass("text-success").attr("href", "ServletUpdateUsuario?type=" + type + "&id=" + id).appendTo(update);
 					let i = $("<i>").addClass("fa-solid fa-pen-to-square mx-3").appendTo(a);
 
-					console.log(id);
 				});
 
 				tableContainer.append(table);

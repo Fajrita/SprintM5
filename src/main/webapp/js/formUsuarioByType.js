@@ -1,3 +1,4 @@
+// despliega los formularios segun el tipo de ususario ingresado en #form-usuario
 $(document).ready(function() {
 	
   

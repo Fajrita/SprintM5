@@ -17,12 +17,7 @@
 	<jsp:include page="navbar.jsp" />
 
 <%@ page import="javax.servlet.http.HttpServletRequest" %>
-<%
-  String type = request.getParameter("type");
-  String run = request.getParameter("value");
-  
-  // Aquí puedes utilizar los valores de type y value como desees
-%>
+
 	<div class="container mt-5">
 		<h1 class="text-center">Crear Usuario</h1>
 		<div class="form-floating col-10 offset-1 col-md-6 offset-md-3 mt-4"
